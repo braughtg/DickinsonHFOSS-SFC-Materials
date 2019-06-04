@@ -60,8 +60,8 @@ The following set of activities form the core of the students' selection and par
 * __Project Contributions__ - Once familiar with the project and a working developer install has been completed, these activities guide the students through increasingly deep participation in their H/FOSS project communities.  Like the prior activities, these each have completion criterion rather than due dates as the effort involved in each will vary significantly from project to project. Most teams or sub-teams complete the Bug Gardening activity by the end of the first semester and the Bug Fixing activity by the end of the second semester.  Many teams or sub-teams make a variety of other contributions to their projects by the end of the year.
   * __Activities__
     * [Bug Gardening](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projbuggardening.html)
-    * [Bug Fixing](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projbugfix)
-    * [Project Contribution](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projontrib.html)
+    * [Bug Fixing](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projbugfix.html)
+    * [Project Contribution](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projcontrib.html)
 
 #### Course Deliverables & Assessment
 Assessment of student work is done through a number of deliverables and assessments.
