@@ -25,63 +25,63 @@ The [full website for the Senior Seminar (COMP 491/492)](https://raw.githack.com
 #### Technical Skills Development
 This set of activities, tutorials and homework exercises introduce students to many general tools and skills that are necessary for participation in FOSS projects.  They are completed as a combination of homework and in-class hands-on activities.
 
-* [Blog/Slack/Wiki/GitHub](./cs491f18/blogslackwiki.html)
-* [Ubuntu Install](./cs491f18/ubuntuinstall.html)
-* [Unix Tools Challenges](./cs491f18/unixtools.html)
-* [Software Installation](./cs491f18/swinstall.html)
-* [GitHub Workflow](./cs491f18/github.html)
-* [Bash Scripting](./cs491f18/bashscript.html)
-* [Building an Open Source Project](./cs491f18/build.html)
-* [Getting Around in a FOSS Project](./cs491f18/gettingaround.html)
-* [Patching a FOSS Project](./cs491f18/patch.html)
+* [Blog/Slack/Wiki/GitHub](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/blogslackwiki.html)
+* [Ubuntu Install](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/ubuntuinstall.html)
+* [Unix Tools Challenges](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/unixtools.html)
+* [Software Installation](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/swinstall.html)
+* [GitHub Workflow](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/github.html)
+* [Bash Scripting](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/bashscript.html)
+* [Building an Open Source Project](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/build.html)
+* [Getting Around in a FOSS Project](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/gettingaround.html)
+* [Patching a FOSS Project](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/patch.html)
 
 #### H/FOSS Discussion Topics & Readings
 Students are assigned readings on a variety of topics related to FOSS and H/FOSS. A class discussion following the completion of the readings explores and reinforces the most interesting and important points.  Following each discussion students write a reflective blog post exploring an aspect of the topic of interest to them.
 
-* [H/FOSS History & Philosophy](./cs491f18/cs491f18.html#0906)
-* [H/FOSS Project Community](./cs491f18/cs491f18.html#0913)
-* [H/FOSS Project Tools/Structures/Communication](./cs491f18/cs491f18.html#0917)
-* [FOSS Licensing](./cs491f18/cs491f18.html#1101)
-* [H/FOSS Motivations](./cs491f18/cs491f18.html#1206)
-* [FOSS Success Stories and Criticisms](./cs491f18/cs491f18.html#1210)
+* [H/FOSS History & Philosophy](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#0906)
+* [H/FOSS Project Community](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#0913)
+* [H/FOSS Project Tools/Structures/Communication](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#0917)
+* [FOSS Licensing](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#1101)
+* [H/FOSS Motivations](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#1206)
+* [FOSS Success Stories and Criticisms](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/cs491f18.html#1210)
 
 #### H/FOSS Project Activities
 The following set of activities form the core of the students' selection and participation in an H/FOSS project community.
 
 * __Project Selection__ - These activities progressively build toward the formation of project teams and the selection of H/FOSS project communities.  Each activity lasts a week to a week and half.
   * __Activities__:
-    * [H/FOSS Project Exploration](./cs491f18/projexpl.html) - Students each identify and explore four H/FOSS projects that are of interest to them.
-    * [H/FOSS Project Reviews](./cs491f18/projrev.html) - Students dig deeper into the community and technical details of two of the H/FOSS projects that they explored.
-    * [H/FOSS Project Ranking & Selection](./cs491f18/projranking.html) - Teams of 2-4 are formed around general areas of interest and commonly reviewed projects. Teams evaluate and rank H/FOSS projects that the members have reviewed and select the one on which the team will work for the year.
+    * [H/FOSS Project Exploration](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projexpl.html) - Students each identify and explore four H/FOSS projects that are of interest to them.
+    * [H/FOSS Project Reviews](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projrev.html) - Students dig deeper into the community and technical details of two of the H/FOSS projects that they explored.
+    * [H/FOSS Project Ranking & Selection](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projranking.html) - Teams of 2-4 are formed around general areas of interest and commonly reviewed projects. Teams evaluate and rank H/FOSS projects that the members have reviewed and select the one on which the team will work for the year.
 * __Project Setup & Familiarization__ - Teams complete these activities to install and begin to familiarize themselves with their H/FOSS projects.  Teams of more than 3 sub-divide into sub-teams of 2-3 and each sub-team works independently. However, the sub-teams share information and provide assistance and guidance to each other. Each project is different. Some are easy to install and build, others are much more difficult. Thus, these activities do not have due dates. Rather they have completion criterion. When a team or sub-team can demonstrate that they have satisfied the completion criterion they move onto the next activity.
   * __Activities__
-    * [User Installation](./cs491f18/projinstalluser.html)
-    * [Developer Installation](./cs491f18/projinstalldev.html)
+    * [User Installation](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projinstalluser.html)
+    * [Developer Installation](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projinstalldev.html)
 * __Project Contributions__ - Once familiar with the project and a working developer install has been completed, these activities guide the students through increasingly deep participation in their H/FOSS project communities.  Like the prior activities, these each have completion criterion rather than due dates as the effort involved in each will vary significantly from project to project. Most teams or sub-teams complete the Bug Gardening activity by the end of the first semester and the Bug Fixing activity by the end of the second semester.  Many teams or sub-teams make a variety of other contributions to their projects by the end of the year.
   * __Activities__
-    * [Bug Gardening](./cs491f18/projbuggardening.html)
-    * [Bug Fixing](./cs491f18/projbugfix)
-    * [Project Contribution](./cs491f18/projontrib.html)
+    * [Bug Gardening](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projbuggardening.html)
+    * [Bug Fixing](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projbugfix)
+    * [Project Contribution](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projontrib.html)
 
 #### Course Deliverables & Assessment
 Assessment of student work is done through a number of deliverables and assessments.
 
-* [Preparation / Attendance / Engagement (PAE)](./cs491f18/syllabus.html#pae) - Students receive a mark for each of these elements for each class meeting.
-* [Tutorials / Homework Exercises](./cs491f18/syllabus.html#hw) - During the first semester, each of the technical skill development activities and project selection activities are graded.
-* [Reflective Blog Postings](./cs491f18/syllabus.html#blog) - Students write reflective blog posts following readings and class discussions.  These are assessed and feedback is provided at several points during each semester.
-* [Project Selection](./cs491f18/projpres.html) - Teams give a presentation on their selected H/FOSS project.
-* [Code Review](./cs491f18/coderev.html) - Individual students present a snippet of code from their H/FOSS project.
-* [Poster Presentation](./cs491f18/poster.html) - Teams produce and present a poster describing their year's work at a public poster sessions near the end of the second semester.
+* [Preparation / Attendance / Engagement (PAE)](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#pae) - Students receive a mark for each of these elements for each class meeting.
+* [Tutorials / Homework Exercises](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#hw) - During the first semester, each of the technical skill development activities and project selection activities are graded.
+* [Reflective Blog Postings](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#blog) - Students write reflective blog posts following readings and class discussions.  These are assessed and feedback is provided at several points during each semester.
+* [Project Selection](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/projpres.html) - Teams give a presentation on their selected H/FOSS project.
+* [Code Review](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/coderev.html) - Individual students present a snippet of code from their H/FOSS project.
+* [Poster Presentation](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/poster.html) - Teams produce and present a poster describing their year's work at a public poster sessions near the end of the second semester.
 
 
-* [H/FOSS Project Checkpoints](./cs491f18/syllabus.html#ProjCheckpoint) - Following the selection of the H/FOSS projects, teams progress through the H/FOSS Project Activities at different rates. Thus, assessment is done by evaluating the work done by each individual and each team at specified checkpoints rather than based on completion of the activities. Typically there are two checkpoints each semester, one mid-semester and one during the final exam period. At each checkpoint work is assessed along six dimensions:
-  * _Daily Reporting_ - Teams or sub-teams maintain [Slack Live-Logs](./cs491f18/syllabus.html#SlackLiveLog) as they work detailing what they try, what works, what doesn't work and what resources they have used.  This provides a useful record for the students and a fine grained documentation of their efforts.
-  * _Individual Weekly Reporting_ - Each student writes an (approximately) weekly [Five-Fifteen Report](./cs491f18/syllabus.html#fivefifteen) reflecting on their individual work over the past week and setting goals for the next week.
-  * _Team Weekly Reporting_ - Each team writes an (approximately) weekly [Five-Fifteen Report](./cs491f18/syllabus.html#fivefifteen) reflecting on the team's work over the past week and setting goals for the next week.
+* [H/FOSS Project Checkpoints](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#ProjCheckpoint) - Following the selection of the H/FOSS projects, teams progress through the H/FOSS Project Activities at different rates. Thus, assessment is done by evaluating the work done by each individual and each team at specified checkpoints rather than based on completion of the activities. Typically there are two checkpoints each semester, one mid-semester and one during the final exam period. At each checkpoint work is assessed along six dimensions:
+  * _Daily Reporting_ - Teams or sub-teams maintain [Slack Live-Logs](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#SlackLiveLog) as they work detailing what they try, what works, what doesn't work and what resources they have used.  This provides a useful record for the students and a fine grained documentation of their efforts.
+  * _Individual Weekly Reporting_ - Each student writes an (approximately) weekly [Five-Fifteen Report](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#fivefifteen) reflecting on their individual work over the past week and setting goals for the next week.
+  * _Team Weekly Reporting_ - Each team writes an (approximately) weekly [Five-Fifteen Report](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#fivefifteen) reflecting on the team's work over the past week and setting goals for the next week.
   * _Team Checkpoint Presentation_ - At each checkpoint, each team gives a presentation summarizing their work to date.
-    * [Mid-Semester Checkpoints](./cs491f18/syllabus.html#ProjCheckpoint)
-    * [End of Fall Semester](./cs491f18/sem1finalpres.html)
-    * [End of Year](./cs491f18/finalpres.html)
+    * [Mid-Semester Checkpoints](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/syllabus.html#ProjCheckpoint)
+    * [End of Fall Semester](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/sem1finalpres.html)
+    * [End of Year](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/finalpres.html)
   * _Individual Effectiveness_ - This is the instructor's assessment of the individual's effectiveness in the project work.  It is based on interactions in class, out of class, a review of the individual and team 5-15 reports and the team and sub-team Slack live-logs.
   * _Team Effectiveness_ - This is the instructor's assessment of the effectiveness of the team in the project work.  It is based on interactions in class, out of class, a review of the team 5-15 reports and the team and sub-team Slack live-logs.
 
@@ -108,10 +108,10 @@ Based on our experiences with these course materials over the past three years t
 ## Additional Resources
 
 * Course Surveys - A pair of course surveys have been given each year to assess the impact of the approach on a variety of student perceptions.
-  * [Pre-Survey](./resources/DC-COMP491-PreSurvey-F16.docx) - Word source for the survey given at the start of the year.
-  * [Post-Survey](./resources/DC-COMP491-PostSurvey-F16.docx) - Word source for the survey given both at the end of the first semester and the end of the year.
-* [Grading Rubrics](./resources/Rubrics.xlsx) - Excel source for all of the rubrics used in the course.
-* [slackalytics](./resources/slackalytics.zip) - A Slack integration used to gather message statistics from Live-Logs through Google Analytics. This integration can be attached to each team or sub-team channel to collect message count and word count data by day and channel and user.  This provides summary information to complement content reviews of the Slack Live-Logs, and makes it easy to visualize how teams are distributing their work over time. The original [slackalytics](https://github.com/NicoMiceli/slackalytics) project is on GitHub.
+  * [Pre-Survey](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/resources/DC-COMP491-PreSurvey-F16.docx) - Word source for the survey given at the start of the year.
+  * [Post-Survey](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/resources/DC-COMP491-PostSurvey-F16.docx) - Word source for the survey given both at the end of the first semester and the end of the year.
+* [Grading Rubrics](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/resources/Rubrics.xlsx) - Excel source for all of the rubrics used in the course.
+* [slackalytics](https://raw.githack.com/braughtg/DickinsonHFOSS-SFC-Materials/master/resources/slackalytics.zip) - A Slack integration used to gather message statistics from Live-Logs through Google Analytics. This integration can be attached to each team or sub-team channel to collect message count and word count data by day and channel and user.  This provides summary information to complement content reviews of the Slack Live-Logs, and makes it easy to visualize how teams are distributing their work over time. The original [slackalytics](https://github.com/NicoMiceli/slackalytics) project is on GitHub.
 
 ---
 #### Acknowledgements:
