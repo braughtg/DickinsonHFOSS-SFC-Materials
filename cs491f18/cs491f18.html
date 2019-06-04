@@ -1,0 +1,2327 @@
+<HTML>
+<HEAD>
+<Title>COMP491/492 - Computer Science Senior Seminar</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491/492<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Academic Year 2018/19<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<font size=+1 color='#006400'>
+<b>General Course Information</b>
+</font>
+<UL>
+<LI><a href="syllabus.html">Syllabus & Course Description</a>
+<LI><a href="http://users.dickinson.edu/~braught/index.html">My Home Page</a> with office hours etc...
+</UL>
+
+<font size=+1 color='#006400'>
+<b>Useful Links</b>
+</font>
+<UL>
+<LI><a href="https://lms.dickinson.edu/course/view.php?id=38331">Course Moodle</a>
+<LI><a href="https://comp491.slack.com">Course Slack Organization</a>
+
+<p>
+<LI><a href="#COMP492">Jump to COMP492 Outline</a>
+</UL>
+
+<a name="COMP491">
+<font size=+1 color='#006400'>
+<b>COMP491 Outline</b>
+</font>
+<UL>
+<LI><a href="#0903">M 09/03</a>: Course Introduction
+<LI><a href="#0906">R 09/06</a>: H/FOSS History & Philosophy
+<p>
+<LI><a href="#0910">M 09/10</a>: Unix Tool Challenges
+<LI><a href="#0913">R 09/13</a>: H/FOSS Project Community
+<p>
+<LI><a href="#0917">M 09/17</a>: H/FOSS Project Tools/Structures/Communication
+<LI><a href="#0920">R 09/20</a>: Linux System Administration
+<p>
+<LI><a href="#0924">M 09/24</a>: Version Control I
+<LI><a href="#0927">R 09/27</a>: Version Control II
+<p>
+<LI><a href="#1001">M 10/01</a>: Bash Scripting
+<LI><a href="#1004">R 10/04</a>: Project Selection &amp; Research Proposal Presentations - Group I
+<p>
+<LI><a href="#1008">M 10/08</a>: Project Selection &amp; Research Proposal Presentations - Group II
+<LI><a href="#1011">R 10/11</a>: Work Day
+<p>
+<LI><a href="#1015">M 10/15</a>: Build Tools
+<LI><a href="#1018">R 10/18</a>: Getting Around a FOSS Project
+<p>
+<LI><a href="#1022">M 10/22</a>: Fall Pause
+<LI><a href="#1025">R 10/25</a>: Software Architectures
+<p>
+<LI><a href="#1029">M 10/29</a>: Work Day
+<LI><a href="#1101">M 11/01</a>: FOSS Licensing
+<p>
+<LI><a href="#1105">M 11/05</a>: Work Day
+<LI><a href="#1108">R 11/08</a>: Software Flaws
+<p>
+<LI><a href="#1112">M 11/12</a>: Project Checkpoint #1 - Group II
+<LI><a href="#1115">R 11/15</a>: Project Checkpoint #1 - Group I
+<p>
+<LI><a href="#1119">M 11/19</a>: Software Patterns
+<LI><a href="#1122">R 11/22</a>: Thanksgiving Break
+<p>
+<LI><a href="#1126">M 11/26</a>: Work Day
+<LI><a href="#1129">R 11/29</a>: Software Testing
+<p>
+<LI><a href="#1203">M 12/03</a>: Software Processes
+<LI><a href="#1206">R 12/06</a>: H/FOSS Motivations
+<p>
+<LI><a href="#1210">M 12/10</a>: FOSS Success Stories and Criticisms
+<LI><a href="#1213">R 12/13</a>: Wrap Up Day
+<p>
+<LI><a href="#1220">R 12/20</a>: Thursday 2:00pm - Final Exam Period - Project Checkpoint #2
+</UL>
+
+<a name="COMP492">
+<font size=+1 color='#006400'>
+<b>COMP492 Outline</b>
+</font>
+<UL>
+<LI><a href="#0121">M 01/21</a>: Course Introduction / Retrospective
+<LI><a href="#0124">R 01/24</a>: Work Day
+<p>
+<LI><a href="#0128">M 01/28</a>: Discussion: Introduction to Ethics (Prof. Braught)
+<LI><a href="#0131">R 01/31</a>: Work Day
+<p>
+<LI><a href="#0204">M 02/04</a>: Discussion: Ethical Issues with Autonomous Cars (Prof. Braught)
+<LI><a href="#0207">R 02/07</a>: Work Day
+<p>
+<LI><a href="#0211">M 02/11</a>: Discussion: Social Media: Truth and Influence in On-line News/Media
+<LI><a href="#0214">R 02/14</a>: Work Day
+<p>
+<LI><a href="#0218">M 02/18</a>: No Class - Independent Work Day
+<LI><a href="#0221">R 02/21</a>: No Class - Independent Work Day
+<p>
+<LI><a href="#0225">M 02/25</a>: Discussion: Internet of Things
+<LI><a href="#0228">R 02/28</a>: No Class - Independent Work Day
+<p>
+<LI><a href="#0304">M 03/04</a>: Project Checkpoint #1
+<LI><a href="#0307">R 03/07</a>: Project Checkpoint #1
+<p>
+<LI><a href="#0311">M 03/11</a>: Spring Break
+<LI><a href="#0314">R 03/14</a>: Spring Break
+<p>
+<LI><a href="#0318">M 03/18</a>: Discussion: Blockchain
+<LI><a href="#0321">R 03/21</a>: Work Day
+<p>
+<LI><a href="#0325">M 03/25</a>: Discussion: Government Surveillance
+<LI><a href="#0328">R 03/28</a>: Code Review
+<p>
+<LI><a href="#0401">M 04/01</a>: Code Review
+<LI><a href="#0404">R 04/04</a>: Code Review
+<p>
+<LI><a href="#0408">M 04/08</a>: No Class - Independent Work Day
+<LI><a href="#0411">R 04/11</a>: Discussion: Artificial Intelligence: Warfare, Judicial Systems &amp; Beauty Contents
+<p>
+<LI><a href="#0415">M 04/15</a>: Alumni Guest: John E. Jones (The Case Foundation)
+<LI><a href="#0418">R 04/18</a>: Work Day
+<p>
+<LI><a href="#0422">M 04/22</a>: Discussion: Social Media: Privacy and Personal Data
+<LI><a href="#0424">W 04/24</a>: Science Poster Session (HUB Social Hall 4:30-6:00)
+<LI><a href="#0425">R 04/25</a>: Work Day
+<p>
+<LI><a href="#0429">M 04/29</a>: SL/CBL Posters Session (Rector 4:30-6:00)
+<LI><a href="#0502">R 05/02</a>: Wrap Up Day
+<p>
+<LI><a href="#0507">T 05/07</a>: Tuesday 2:00pm - Final Exam Period - Project Presentations
+
+<p>NOTE: Schedule of topics and assignments are tentative and subject to change throughout the semester, with appropriate notice.
+</UL>
+
+<font size=+1 color='#006400'>
+<b>COMP491 Details</b>
+</font>
+<br><br>
+<UL>
+<table border=1 width=100%>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0903">
+  09/03 - Course Introduction
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Overview of course content and structure; Syllabus w/ assignment types and grading; Pre-survey; Discussion of perceptions of H/FOSS; Machine assignments; Discussion of Slack <i>live-log</i> expectations.</td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="blogslackwiki.html">Blog/Slack/Wiki/Git Activity</a> (Individual)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/06 - Complete the <a href="blogslackwiki.html">Blog/Slack/Wiki/Git Activity</a> (Individual)
+    <LI>09/06 - Do the <a href="#0906">Reading &amp; Preparation for 09/06</a> (Individual)
+    <LI>09/10 - <a href="ubuntuinstall.html">Ubuntu Install</a> with Slack live-log (Pairs)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0906">
+  09/06 - H/FOSS History & Philosophy
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Introduction to the project selection process; Class discussion of H/FOSS history and philosophy.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/index.html">The Cathedral and the Bazaar</a> - The most widely read and cited article articulating the ideas behind open source software development.
+    <LI><a href="http://producingoss.com/en/introduction.html">Producing OSS: Introduction</a> - Good history of the idea and movement. Written from the perspective of running a project, but what it has to say is also more broadly applicable. Touches on the value of: packaging/presentation; culture/community; history; FSF/GNU/Stallman; licensing; free vs open; OSI.
+    <LI><a href="https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/ch-Foreword.html">Teaching OSS: Foreword</a> (Sections 1.1-1.4, Use the Next link at the bottom of each page.) - Gets at many of the reasons that we are using H/FOSS in this class. 
+    <LI>Watch Richard Stallman, the founder of the free software movement talk about <a href="http://audio-video.gnu.org/video/short--undated--rms--free-software-four-freedoms.ogv">Free Software and the Four Freedoms</a> (8 minutes).
+
+    <br><br>
+  
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://en.wikipedia.org/wiki/Open-source_software">WikiPedia: Open Source Software</a> - Good overview for perspective: history; definitions; process; licensing.
+    <LI><a href="https://www.gnu.org/philosophy/open-source-misses-the-point.html">Why Open Source misses the point of Free Software</a> - Commentary by Richard Stallman, every computer scientist should read something he has written.
+    <LI>A collection of <a href="http://audio-video.gnu.org/video/">Video Recordings of speeches given by Richard Stallman</a> on topics related to software freedom.
+    <LI><a href="https://www.gnu.org/philosophy/free-sw.html">What is free software?</a> - Definition of free software from the Free Software Foundation.
+    <LI><a href="https://opensource.org/osd">The Open Source Definition</a> - Definition of Open Source from the Open Source Initiative.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/10 - Blog post reflecting on the H/FOSS History & Philosophy Readings and Discussion (Individual)
+    <LI>09/10 - <a href="ubuntuinstall.html">Ubuntu Install</a> with Slack live-log (Pairs)
+    <LI>09/10 - <a href="https://ryanstutorials.net/linuxtutorial/">Ryan's Tutorials - Linux Tutorial</a> - In pairs, complete Tutorial Sections 1-12 (Click on the Blue "Tutorial Sections" button to see them). Keep a Slack live-log (create a new private channel e.g. "gb-yz-unix-tutoral", invite me and your partner). (Pairs)  
+    <LI>09/13 - <a href="projexpl.html">H/FOSS Project Exploration Activity</a> (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0910">
+  09/10 - Unix Tool Challenges
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Explorations; Hands-on work with Unix tools.</td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/index.html">Unix Tutorial for Beginners</a>. NOTE: These tutorials use the University of Surrey environment which uses the tcsh shell in RedHat linux.  Our system uses the bash shell in Ubuntu. With a little thought and experimentation you should be able to adapt.
+    <LI><a href="http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/">Unix/Linux Cheat Sheet</a> - a listing of many of the useful unix commands.
+    <LI><a href="http://www.pixelbeat.org/cmdline.html">Linux Commands</a> - Another cheat sheet with common usage examples for some of the commands.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="unixtools.html">Unix Tools Challenges</a> activity. (Pairs)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/13 - Do the <a href="#0913">Reading &amp; Preparation for 09/13</a> (Individual)
+    <LI>09/13 - <a href="projexpl.html">H/FOSS Project Exploration Activity</a> (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0913">
+  09/13 - H/FOSS Project Community
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Explorations; Introduction of Project Reviews; Discussion of the structure of H/FOSS communities.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://opensource.com/business/13/6/four-types-organizational-structures-within-open-source-communities">Four types of open source communities</a> - Matthias Sturmer discusses different ways in which open source communities are structured.
+    <LI><a href="https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/sn-Introduction_to_Free_and_Open_Source_Software-Climbing_Contributor_Mountain.html">Teaching OSS: 2.5 Climbing Contributor Mountain</a> (Sections 2.5.1-2.5.4, 2.6. Use the Next button at the bottom of each page.) - An easy read that touches on the different roles people play in FOSS projects.
+    <LI><a href="http://producingoss.com/en/social-infrastructure.html">Producing OSS: Social and Political Infrastructure</a> - Discusses a variety of issues that affect project community (Read sections on Benevolent Dictators and Consensus-based Democracy).
+    <LI><a href="https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/ch-Lay_of_the_Land.html">Teaching OSS: Chapter 3 - Lay of the Land</a> (Sections 3.1-3.3 Use Next button at the bottom of each page) - Discusses the importance and unique challenges/qualities of FOSS communities.
+    <LI><a href="http://producingoss.com/en/managing-participants.html">Producing OSS: Managing Participants</a> - Touches on both roles and community building in FOSS projects.  This is written from the project administration rather than participation side but is still useful in looking at existing projects and their communities.
+
+<br><br>
+  
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>   
+    <LI><a href="https://opensource.com/life/13/4/ten-ways-participate-open-source">10 ways to start contributing to open source</a> by Chris Haddad.
+    <LI><a href="https://blog.newrelic.com/2014/05/05/open-source_gettingstarted/">The Beginner's Guide to Contributing to Open Source Projects</a> by Andy Lester.
+    <LI><a href="https://blog.newrelic.com/2014/11/05/open-source-contribution/">7 Things That Make a Great Open Source Contribution</a> by Andy Lester.
+    <LI><a href="https://smartbear.com/blog/test-and-monitor/14-ways-to-contribute-to-open-source-without-being/">14 Ways to Contribute to Open Source without Being a Programming Genius or a Rock Star</a> by Andy Lester.
+    <LI><a href="https://blog.newrelic.com/2014/10/21/open-source-contributors/">The 8 Essential Traits of a Great Open Source Contributor</a> by Andy Lester.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/17 - Blog post reflecting on the H/FOSS Project Community Discussion (Individual)
+    <LI>09/17 - Do the <a href="#0917">Reading &amp; Preparation for 09/17</a> (Individual)
+    <LI>09/20 - <a href="projrev.html">H/FOSS Project Review Activity</a> (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0917">
+  09/17 - H/FOSS Project Tools/Structures/Communication
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Reviews; Discussion of tools and structures of H/FOSS projects; Communication tools and tips.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://producingoss.com/en/getting-started.html#starting-from-what-you-have">Producing OSS: Starting From What You Have</a> - This is written from perspective starting a new FOSS project and what is necessary to make it good. Try to read it instead from the perspective of assessing the quality of an existing project.
+    <LI><a href="http://producingoss.com/en/bug-tracker.html">Producing OSS: Bug Tracker</a> - an overview of bug trackers and how they are and should be used in projects.
+    <LI><a href="https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/sn-Lay_of_the_Land-Communicating.html">Teaching OSS: Chapter 3 - Communicating</a> (Sections 3.4-3.10, You are not required to do the exercises. Use Next button at the bottom of each page) - looks at a variety of communication tools typically used in FOSS projects, and gives some good tips for using each.
+    <LI><a href="http://producingoss.com/en/irc.html">Producing OSS: IRC/Real-Time Chat Systems</a> - Discusses IRC and other real-time communication systems, and gives some particularly good advice regarding the use of "Paste Sites".
+ <br><br>
+  
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>   
+    <LI><a href="http://foss2serve.org/index.php/Intro_to_FOSS_Project_Anatomy_(Activity)">Project Anatomy Activity</a> - Work though at least one of the Guided Tours at the bottom (either Sugar Labs or Sahana Eden) to see some concrete examples of how the project components discussed in the readings appear in real projects.  You don't have to write answers to any of the questions, but think about them!
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/20 - Blog post reflecting on the H/FOSS Project Tools/Structures/Communication Readings and Discussion (Individual)
+    <LI>09/20 - <a href="projrev.html">H/FOSS Project Review Activity</a> (Individual)
+    <LI>09/20 - Do the <a href="#0920">Reading &amp; Preparation for 09/20</a> (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0920">
+  09/20 - Linux System Administration
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Reviews; Introduction of Project Ranking &amp; Selection; System administration and Software installation activity.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI>Watch <a href="https://www.youtube.com/watch?v=c_4XnaMvq7U">New Ubuntu User: How To Install Software In Ubuntu</a> - shows how to install software using the Ubuntu Software Center.
+    <LI>Watch <a href="https://www.youtube.com/watch?v=8P-Vek7Vtgg">Linux Sysadmin Basics 05 -- Package Management with apt-get</a> - shows how to install software from the command line with apt-get.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>   
+    <LI><a href="https://www.digitalocean.com/community/tutorials/package-management-basics-apt-yum-dnf-pkg">Package Management Basics: apt, yum, dnf, pkg</a> - discusses package management generally and a range of different tools from different flavors of linux.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="swinstall.html">Software Installation</a> activity. (Pairs)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/24 - Complete the <a href="swinstall.html">Software Installation</a> activity. (Pairs)
+    <LI>09/24 - Do the <a href="#0924">Reading &amp; Preparation for 09/24</a> (Individual)    
+    <LI>09/24 - Complete the <a href="https://learngitbranching.js.org/">Learn Git Branching: Introduction Sequence (1-4)</a> with Slack live-log (create a new private channel e.g. "gb-yz-git", invite me and your partner) (Paired)
+    <LI>09/24 - Complete "Part 1 - Before the First Class" in the <a href="github.html">Git/GitHub Workflow Activity</a>. Appending to your Slack live-log (Paired).
+    <LI>10/01 - <a href="projranking.html">H/FOSS Project Ranking &amp Selection</a> (Teams)
+    <LI>10/01 - Honors Research Proposal (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0924">
+  09/24 - Version Control I
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Ranking &amp Selection; Discussion of Version Control readings; git/GitHub activity I.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://producingoss.com/en/vc.html">Producing OSS: Version Control</a> - an overview of version control that is reasonably tool agnostic.
+    <LI><a href="https://www.sbf5.com/~cduan/technical/git/">Understanding Git Conceptually</a> - a good overview of how git works and why it is the way it is (read sections 1-3).
+
+ <br><br>
+  
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>   
+    <LI><a href="https://betterexplained.com/articles/a-visual-guide-to-version-control/">A Visual Guide to Version Control</a> - an introduction to centralized version control (e.g. CVS/SVN).
+    <LI><a href="https://betterexplained.com/articles/intro-to-distributed-version-control-illustrated/">Introduction to Distributed Version Control (Illustrated)</a> - an introduction to distributed version control (e.g. mercurial/git).
+    <LI>You may also find the <a href="https://git-scm.com/videos">Git Videos</a> informative.
+    <LI><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx">Git Tutorial Videos</a> by Corey Schafer that cover a variety of git topics.  The one on "Command-Line Fundamentals" is most relevant for today's class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="github.html">Git/GitHub Workflow Activity</a> - Part 2 - Hands-on in the First Class. Append to your Slack live log (Paired).
+    <LI><a href="githubslides.pdf">Git/GitHub Workflow Slides</a> - the slides used in class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>09/27 - Do the <a href="#0927">Reading &amp; Preparation for 09/27</a> (Individual)
+    <LI>09/27 - Complete "Part 3 - Before the Second Class" in the <a href="github.html">Git/GitHub Workflow Activity</a>. Appending to your Slack live-log (Paired).
+    <LI>10/01 - <a href="projranking.html">H/FOSS Project Ranking &amp Selection</a> (Teams)
+    <LI>10/01 - Honors Research Proposal (Individual)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0927">
+  09/27 - Version Control II
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Ranking &amp Selection; Discussion of Version Control readings; git/GitHub activity II.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.sbf5.com/~cduan/technical/git/">Understanding Git Conceptually</a> - a good overview of how git works and why it is the way it is (read sections 4-5).
+
+<br><br>
+
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>   
+    <LI><a href="https://www.youtube.com/playlist?list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx">Git Tutorial Videos</a> by Corey Schafer that cover a variety of git topics.  The one on "Diff and Merge Tools" is most relevant for today's class.
+    <LI>You may also find the <a href="https://git-scm.com/videos">Git Videos</a> informative.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="github.html">Git/GitHub Workflow Activity</a> - Part 4 - Hands-on in the Second Class. Append to your Slack live log (Paired).
+    <LI><a href="githubslides.pdf">Git/GitHub Workflow Slides</a> - the slides used in class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>10/01 - Blog post reflecting on Version Control Readings, Activity and Discussions (Individual)
+    <LI>10/01 - <a href="projranking.html">H/FOSS Project Ranking &amp Selection</a> (Teams)
+    <LI>10/01 - Honors Research Proposal (Individual)
+    <LI>10/01 - <a href="http://ryanstutorials.net/bash-scripting-tutorial/">Bash Scripting Tutorial</a> from Ryan's Tutorials. In pairs, complete Tutorial Sections 1-6 (see Blue Button in upper right) keeping a Slack live-log (create a new private channel e.g. "gb-yz-bash-tutoral", invite me and your partner).  Be sure to try some of the activities at the end of each section. (Pairs)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1001">
+  10/01 - Bash Scripting
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Ranking &amp Selection; Introduction of Project Selection &amp; Research Proposal Presentations; Draw dates for presentations; Introduction of Activities &amp; Completion Criterion; Bash scripting activity.</td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html">BASH Programming - Introduction HOW-TO</a> by Mike G mikkey at dynamo.com.ar
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="bashscript.html">Bash Scripting</a> activity (Pairs)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>10/04 &amp; 10/08 - Prepare <a href="projpres.html">Project Selection/Proposal Presentation</a>. (Teams / Honors)
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1004">
+  10/04 - Project Selection &amp; Research Proposal Presentations - Group I
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Team presentations of selected H/FOSS projects; Individual presentations of Honors Research Projects.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1008">
+  10/08 - Project Selection &amp; Research Proposal Presentations - Group II
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Team presentations of selected H/FOSS projects; Individual presentations of Honors Research Projects.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1011">
+  10/11 - Work Day</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Time for project work.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>10/12 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>10/15 - <a href="https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install">The magic behind configure, make, make install</a> by George Brocklehurst.  Work the Hello world example keeping a Slack live-log (e.g. "gb-yz-make-tutorial", invite me and your partner). Include your main.c, configure.ac and makefile.am files in your live-log.
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1015">
+  10/15 - Build Tools
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Selection &amp; Research Proposal Presentations; Building a FOSS project activity.</td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://mrob.com/pub/comp/unix-building-history.html">History of UNIX Project Build Tools</a> by Robert Munafo outlines why the build tools are the way they are.
+    <LI><a href="https://en.wikipedia.org/wiki/GNU_Build_System">GNU Build System</a> gives a brief outline of the tools and some links at the end to all of the gory details.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="build.html">Building an Open Source Project</a> Activity (Pairs)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>    
+    <LI>10/18 - Do the <a href="#1018">Reading &amp; Preparation for 10/18</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1018">
+  10/18 - Getting Around a FOSS Project
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Applying Unix tools to fixing an issue in a project.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html">Unix Tutorial Two</a> - reviews a variety of the unix tools.
+    <LI><a href="https://kb.iu.edu/d/admm">What is the find command</a> - a more in depth coverage of the find command and its features.
+    <LI><a href="https://www.tecmint.com/12-practical-examples-of-linux-grep-command/">12 Practical Examples of Linux grep Command</a> - some common use cases for grep that come in handy.
+  </UL>
+</td>
+</tr>
+<tr>
+  <td align=right><b>Hands-On:</b></td>
+  <td>
+  <UL>
+    <LI><a href="gettingaround.html">Getting around in a FOSS Project</a> Activity in the Slack live-log (e.g. "gb-yz-ModPatch", invite me and your partner) (Pairs)
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>10/19 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>10/25 - Finish: <a href="gettingaround.html">Getting around in a FOSS Project</a> Activity</a> (Pairs)
+    <LI>10/25 - Do the <a href="#1025">Reading &amp; Preparation for 10/25</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1022">
+  10/22 - Fall Pause
+</th>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1025">
+  10/25 - Software Architectures</del>
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Discussion of readings on Software Architectures.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://msdn.microsoft.com/en-us/library/ee658082.aspx">Preface</a> - David Hill's preface to the Microsoft Application Architecture Guide, 2nd edition.
+    <LI><a href="https://www.cs.cmu.edu/afs/cs/project/able/ftp/intro_softarch/intro_softarch.pdf">An Introduction to Software Architecture</a> - David Garlan and Mary Shaw (1994). An early paper that provides a nice introduction and a few case studies.
+
+ <br><br>
+  
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://msdn.microsoft.com/en-us/library/ee658093.aspx">Chapters 1,2,3</a> in the Microsoft Application Architecture Guide, 2nd edition. From Microsoft, but the concepts are substantially technology agnostic.
+    <LI><a href="https://www.youtube.com/watch?v=x30DcBfCJRI">Introduction to Software Architecture</a> a video lecture by George Fairbanks to a class of computer science seniors at the University of Colorado Boulder.
+    <LI><a href="https://msdn.microsoft.com/en-us/library/ee658107.aspx">Application Archetypes</a> in the Microsoft Application Architecture Guide, 2nd edition.  Having a read of the one(s) that match your project might be worthwhile.
+    <LI><a href="https://www.youtube.com/watch?v=Dtd0njgo4s8">10 Things Every Architect Should Know</a> video lecture by Richard Monson-Haefel. Some good practical advice on software architectural designs.
+    <LI><a href="https://www.youtube.com/watch?v=9noJwoIivV8">Software Architecture vs. Code</a> video lecture by Simon Brown.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>10/26 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>10/29 - Blog post reflecting on Software Architectures and Discussion (Individual)
+    <LI>10/29 - <a href="http://www.cyberciti.biz/faq/appy-patch-file-using-patch-command/">HowTo Apply a Patch File To My Linux / UNIX Source Code</a> by Vivek Gite. Work through the example with a Slack live-log (e.g. "gb-yz-Patch", invite me and your partner). Make hello-new.c print your names, create a new patch for hello.c, and include it in your live-log.
+    <LI>10/29 - <a href="patch.html">Patching a FOSS Project</a> Activity appended to above Slack live-log (Pairs)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1029">
+  10/29 - Work Day</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Time for project work.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/01 - Do the <a href="#1101">Reading &amp; Preparation for 11/01</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1101">
+  11/01 - FOSS Licensing
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Licensing issues in FOSS; Licensing of chosen FOSS projects.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://producingoss.com/en/license-quickstart.html">Producing OSS: Choosing a License and Applying It</a> - very short bit on two types of licenses (MIT-style, GPL) and how they are usually applied to FOSS software.
+    <LI><a href="https://www.smashingmagazine.com/2010/03/a-short-guide-to-open-source-and-similar-licenses">A Short Guide To Open-Source And Similar Licenses</a> by Cameron Chapman.
+    <LI><a href="https://www.gnu.org/philosophy/categories.html">Categories of free and nonfree software</a> from GNU and the FSF.
+    <LI><a href="https://marc.info/?l=linux-kernel&m=118236278730043&w=4">GPL V2 and GPL V3</a> - a listserve message from Linus Torvalds arguing for why he prefers V2.  Which side are you on?
+
+    <br><br>
+
+    <LI>Post questions for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+    <LI>Determine which license has been applied to your selected project, research the particulars of that license and be prepared to discuss its advantages and disadvantages and the reasons why it may have been chosen for your project.
+    </UL>
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://choosealicense.com/licenses/">Choose a License</a> - gives a nice tabular summary of the permissions, conditions and limitations of a variety of licenses.
+    <LI><a href="https://www.gnu.org/licenses/license-list.html">Various Licenses and Comments about Them</a> - extensive list of licenses with commentary by GNU and the FSF.
+    <LI><a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html">GPL V2</a> and <a href="https://www.gnu.org/licenses/gpl.html">GPL V3</a>
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/05 - Blog post reflecting on FOSS Licensing Readings and Discussion (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1105">
+  11/05 - Work Day</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Time for project work.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/08 - Do the <a href="#1108">Reading &amp; Preparation for 11/08</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1108">
+  11/08 - Software Flaws
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Discussion of readings on Software Flaws.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.youtube.com/playlist?list=PLOU2XLYxmsIJ7HGm2bv20QrtwcWemSRCI">Three Flaws in Software Design</a> - Watch these 4 video talks with Google developer Max Kanat-Alexander on common flaws in software.  
+
+ <br><br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118">Top 15+ Best Practices for Writing Super Readable Code</a> - Some solid advice on writing good code by Burak Guzel.
+    <LI><a href="https://blog.codinghorror.com/coding-without-comments/">Coding Without Comments</a> - Some insight in to when comments are necessary and not by Jeff Atwood - co-founder of Stack Overflow.  Links in the post lead to some other related posts about commenting.
+    <LI><a href="https://improvingsoftware.com/2011/06/27/5-best-practices-for-commenting-your-code/">5 Best Practices for Commenting Your Code</a> - Good advice on how to comment (and not comment) effectively by johnFuex.
+    <LI>Max Kanat-Alexander's blog on <a href="http://www.codesimplicity.com/">Code Simplicity</a> has some thought provoking posts.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/09 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>11/15 - Blog post reflecting on Software Flaws and Discussion (Individual)
+    <LI>11/12 - Prepare for <a href="syllabus.html#ProjCheckpoint">Project Checkpoint &amp; Presentation</a> (Teams/Honors)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  <UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1112">
+  11/12 - Project Checkpoint #1 - Group I</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="syllabus.html#ProjCheckpoint">Project Checkpoint &amp; Presentation</a>.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/15 - Blog post reflecting on Software Flaws and Discussion (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1115">
+  11/15 - Project Checkpoint #1 - Group II</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="syllabus.html#ProjCheckpoint">Project Checkpoint &amp; Presentation</a>.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/16 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>11/19 - Do the <a href="#1119">Reading &amp; Preparation for 11/19</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1119">
+  11/19 - Software Patterns
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Discussion of Software Patterns;</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.javaworld.com/article/2078665/core-java/design-patterns--the-big-picture--part-1--design-pattern-history-and-classification.html">Design patterns, the big picture, Part 1: Design pattern history and classification</a> - Jeff Friesen introduces the idea of, basic classification of and lists many of the common design patterns. Skim the list, just to be familiar with the names.
+
+    <LI><a href="http://www.javaworld.com/article/2078675/core-java/design-patterns--the-big-picture--part-2--gang-of-four-classics-revisited.html">Design patterns, the big picture, Part 2: Gang-of-four classics revisited</a> - Jeff Friesen gives an expalantion of the Strategy and Visitor patterns.
+
+    <LI>Using the Supplemental Reading sources below learn about an example of at least one more design pattern. Come prepared to briefly define your pattern, explain its purpose and give an example where it would be useful.
+
+ <br><br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://en.wikipedia.org/wiki/Software_design_pattern">Software Design Pattern</a> - Wikipedia page on design patterns. Big list of patterns and links out pages for each of the patterns.
+    <LI><a href="https://code.tutsplus.com/articles/a-beginners-guide-to-design-patterns--net-12752">A Beginner's Guide to Design Patterns</a> - Nikko Bautista introduces the a few design patterns through PHP examples.
+    <LI><a href="https://www.youtube.com/watch?v=vNHpsC5ng_E&list=PLF206E906175C7E07">Design Patterns Video Tutorial</a> - Collection of video lectures by Derek Banas that introcude design patterns (videos 1 & 2) and then explain a variety (videos 3-25) of patterns.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/26 - Blog post reflecting on Software Patterns Reading & Discussion (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1122">
+  11/22 - Thanksgiving Break
+</th>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1126">
+  11/26 - Work Day</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Time for project work.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/29 - Do the <a href="#1129">Reading &amp; Preparation for 11/29</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1129">
+  11/29 - Software Testing
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Discussion of Software Testing.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.guru99.com/software-testing-introduction-importance.html">Introduction, Basics & Importance</a> - Guru99 module on software testing basics.
+    <LI><a href="https://www.guru99.com/software-testing-seven-principles.html">7 Software Testing Principles</a> - some basic principles that underly testing methodologies.
+    <LI><a href="https://en.wikibooks.org/wiki/Introduction_to_Software_Engineering/Testing">Introduction to Software Engineering/Testing</a> - Wiki book that introduces the different types of software testing.
+
+    <LI>If you are doing an H/FOSS project, research what types of testing are being done in your H/FOSS project, what frameworks are being used to automate it and be prepared to discuss.
+
+<br><br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.researchgate.net/profile/David_Young30/publication/273319104_Software_Testing_Overview/links/54fe04680cf2741b69ef9a38/Software-Testing-Overview.pdf">Software Testing Overview</a> - gives some more examples of the different types of testing.
+    <LI><a href="http://www.cse.hcmut.edu.vn/~hiep/KiemthuPhanmem/Tailieuthamkhao/Introduction%20to%20Software%20Testing.pdf">Introduction to Software Testing</a> - a full text on the subject. Part 1 (p3-24) gives a nice introduction and overview the rest expands on that.
+    <LI><a href="http://www.tutorialspoint.com/software_testing_dictionary/">Software Testing Dictionary</a> - A Tutorials Point collection of a massive number of different types of testing with short explanation and examples.
+    <LI><a href="http://www.abeacha.com/NIST_press_release_bugs_cost.htm">Software Errors Cost U.S. Economy $59.5 Billion Annually</a> - report from NIST on a study to estimate the economic impact of software flaws and argue for better software testing tools and techniques.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>11/30 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>12/03 - Blog post reflecting on Software Testing Reading & Discussion (Individual)
+    <LI>12/03 - Do the <a href="#1116">Reading &amp; Preparation for 12/03</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1203">
+  12/03 - Software Processes
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of project status; Discussion of Software Processes</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.youtube.com/watch?v=0b5vp4Z2PKE&index=5&list=PLAwxTw4SYaPkNAtqsKcFkUGpf4j67NBaz">The Software Crisis</a> and <a href="https://www.youtube.com/watch?v=Cd3TrUK8axU">some evidence of it.</a> - Short videos from Georgia Tech via Udacity about the software crisis that motivated the development of software processes and launched software engineering as a field.
+    <LI><a href="http://www.thomasalspaugh.org/pub/fnd/softwareProcess.html">Software Process Models</a> - high level overview of a variety of the most important development processes by Thomas Alspaugh.
+    <LI>Some videos with more information about some of the agile methods:
+    <UL>
+      <LI><a href="https://www.youtube.com/watch?v=Z9QbYZh1YXY">What is Agile?</a> - short introduction agile by Mark Shead. 
+      <LI>An <a href="https://www.youtube.com/watch?v=aQrsVfjbQZ4">introduction to scrum</a>, its main <a href="https://www.youtube.com/watch?v=29dnS7XGgqs">processes</a> and its <a href="https://www.youtube.com/watch?v=o_grcE4tkzY">key values</a>: - by Sally Elatta, president of Agile Transformation.
+      <LI><a href="https://www.youtube.com/watch?v=QCif_-r8eK4">Introduction to Test-Driven Development (TDD)</a> - short explanation of what TDD is as the introduction to a full course by Simon Allardice at lynda.com.
+    </UL>
+
+<br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Some Wikipedia entries on key software development processes:
+    <UL>
+      <LI><a href="https://en.wikipedia.org/wiki/Waterfall_model">Waterfall Model</a>
+      <LI><a href="https://en.wikipedia.org/wiki/Spiral_model">Spiral Model</a>
+      <LI><a href="https://en.wikipedia.org/wiki/Agile_software_development">Agile Methods</a>
+      <LI><a href="https://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>
+      <LI><a href="https://en.wikipedia.org/wiki/Scrum_(software_development)">Scrum</a>
+    </UL>
+    <LI><a href="http://agilemanifesto.org/">The Agile Manifesto</a>
+    <LI><a href="https://hbr.org/2016/05/embracing-agile">Embracing Agile</a> - Article overviewing Agile and its current state.
+    <LI><a href="https://www.youtube.com/watch?v=KtHQGs3zFAM">Jim Coplien and Bob Martin Debate TDD</a> - good discussion of what TDD is/isn't and what its role is/isn't.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>12/06 - Blog post reflecting on Software Processes Reading & Discussion (Individual)
+    <LI>12/06 - Do the <a href="#1206">Reading &amp; Preparation for 12/06</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1206">
+  12/06 - H/F/OSS Motivations
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion or project status; Discussion of what motivates people and businesses to participate in H/F/OSS projects.</td>
+</tr>
+<tr>
+  <td align=right><b>Reading &amp; Preparation:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://www.researchgate.net/profile/Yunwen_Ye/publication/4016743_Toward_an_understanding_of_the_motivation_of_open_source_software_developers/links/02e7e52288b90522ae000000/Toward-an-understanding-of-the-motivation-of-open-source-software-developers.pdf">Toward an Understanding of the Motivation of Open Source Developers</a> a research paper by Yunwen Ye and Kouichi Kishida that was presented that the 2003 International Conference on Software Engineering.  (Use the blue "Download full-text PDF button).
+
+    <LI><a href="http://www.slate.com/articles/technology/future_tense/2014/09/hfoss_software_for_humanity_computer_science_students_solve_real_world_problems.html">Build Something: The computer science answer to Habitat for Humanity</a> - article by Annie Murphy Paul discussing motivations for getting involved in HFOSS projects.
+
+    <LI><a href="https://opensource.org/advocacy/case_for_business.php">Open Source Case for Business: Advocacy</a> - piece from the Open Source Initiative laying out the business case for open source.
+
+    <LI><a href="https://timreview.ca/article/756">The Business of Open Source Software: A Primer</a> - article by Monty Widenius and Linus Nyman overviewing how and why businesses get involved in Open Source.
+
+<br><br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.diss.fu-berlin.de/docs/servlets/MCRFileNodeServlet/FUDOCS_derivate_000000000137/discpaper19_04.pdf">Intrinsic Motivation in Open Source Development</a> a whitepaper report by Jurgen Bitzer, Wolfram Schrettl at the Free University of Berlin and Philipp Schroder at the Aarhus School of Business.
+
+    <LI><a href="http://hecker.org/writings/setting-up-shop">Setting Up Shop: The Business of Open-Source Software</a> - very widely cited article by Frank Hecker, who helped Netscape decide to go open source. He lays out the case for commercial open source business models.
+
+    <LI><a href="http://www.catb.org/esr/writings/magic-cauldron/magic-cauldron.html">The Magic Cauldron</a> - Paper by Eric Raymond discussing the economics of open-source software and the ways in which it makes sense for businesses to be involved.
+  
+    <LI><a href="https://timreview.ca/article/691">Introducing "Business Source": The Future of Corporate Open Source Licensing?</a> - article by Monty Widenius and Linus Nyman discussing the Business Source approach to corporate involvement in Open Source.
+
+    <LI><a href="http://www.revsys.com/writings/oss-in-business.html">Using Open Source in Business</a> - a few vignettes by Frank Wiles illustrating how open source can be used in business.
+
+    <LI><a href="https://handsontable.com/blog/articles/5-successful-business-models-for-web-based-open-source-projects">5 Successful Business Models For Web-Based Open-Source Projects</a> - Chris Meier discusses some commonly used open source business models.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>12/07 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>12/10 - Blog post reflecting on H/F/OSS Motivations Reading & Discussion (Individual)
+    <LI>12/10 - Do the <a href="#1210">Reading &amp; Preparation for 12/10</a> (Individual)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1210">
+  12/10 - FOSS Success Stories & Criticisms
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion of Project Status; Discussion of some open source success stories.</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="https://timreview.ca/article/513">What is the Secret of Red Hat's Success?</a> - Ruth Suehle from Red Hat responds to this question.
+
+    <LI><a href="https://techcrunch.com/2014/02/13/please-dont-tell-me-you-want-to-be-the-next-red-hat/">Why There Will Never Be Another RedHat</a> - Peter Levine looks at the economic barriers to successful open source business.
+
+    <LI><a href="http://www.techrepublic.com/article/red-hats-open-source-success-story-built-on-killing-complexity-in-it/">Red Hat's open source success story built on killing complexity in IT</a> - Mat Asay considers how Red Hat has succeeded and why the time is ripe for another Red Hat.
+
+    <LI><a href="http://www.infoworld.com/article/3058778/open-source-tools/the-secrets-to-linkedins-open-source-success.html">The secrets to LinkedIn's open source success</a> - Matt Asay of Adobe looks at LinkedIn's open source approach for InfoWorld.
+
+    <LI><a href="https://www.ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">The Ethics of Unpaid Labor and the OSS Community</a> - a look at the ethics and diversity of the FOSS model by <a href="https://www.ashedryden.com/">Ashe Dryden</a>
+
+<br><br>
+  
+    <LI>Post questions from the above materials for class discussion to the Moodle forum. Please, also feel free to comment on or respond to other's questions as appropriate.
+
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Supplemental Reading:</b></td>
+  <td>
+  <UL>
+    <LI><a href="http://www.infoworld.com/article/2905331/open-source-software/the-new-struggles-facing-open-source.html">The new struggles facing open source</a> - Matt Asay of Adobe looks at current challenges faced by the open source approach for InfoWorld.
+
+    <LI><a href="http://www.infoworld.com/article/3043024/open-source-tools/the-top-14-new-open-source-projects.html#tk.ifw-infsb">The top 14 new open source projects</a> - InfoWorld's coverage of The Black Duck Software Open Source Rookies of the Year awards given to the best new FOSS projects of 2016.
+
+    <LI><a href="http://www.techrepublic.com/article/linux-creator-linus-torvalds-doesnt-really-care-about-open-source/">Why Linux creator Linus Torvalds doesn't really care about open source</a> - Matt Asay writes about Linus Torvalds motivations for open sourcing Linux in the first place. 
+
+    <LI><a href="http://www.linuxtoday.com/infrastructure/2001041200620OPBZCY">Open Source-onomics: Examining some pseudo-economic arguments about Open Source</a> - article by Ganesh Prasad that addresses a range of objections to the economic viability of open source.
+
+    <LI><a href="https://www.redhat.com/en/open-source-stories">Open Source Stories</a> - a series of short films, supported by RedHat, that tell the stories behind successful and inspiring open source projects.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>12/13 - Blog post reflecting on FOSS Success Stories & Criticisms Reading & Discussion (Individual)
+    <LI>12/20 - Project Checkpoint #2: <a href="sem1finalpres.html">Fall Semester Final Presentation</a> (Teams/Honors)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1213">
+  12/13 - Wrap Up Day</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Overflow of last discussion; Discussion of final presentation; Course Evaluations; Post-course Survey.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>12/14 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>12/20 - <a href="civiclearningblog.html">Blog post reflecting on your Involvement with Open Source Communities</a>. (Individual)
+    <LI>12/20 - Project Checkpoint #2: <a href="sem1finalpres.html">Fall Semester Final Presentation</a> (Teams/Honors)
+    <LI><a href="projinstalluser.html">User Install Activity</a> | 
+        <a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="1220">
+  Thursday 12/20, 2:00pm - Final Exam Period - Project Checkpoint #2
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project Checkpoint #2: <a href="sem1finalpres.html">Fall Semester Final Presentation</a> (Teams/Honors)</td>
+</tr>
+
+</table>
+</UL>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<p>
+<font size=+1 color='#006400'>
+<b>COMP492 Details</b>
+</font>
+<br><br>
+<UL>
+<table border=1 width=100%>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0121">
+  Monday 01/21 - Course Introduction
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Overview of course content and structure; Syllabus w/ assignment types and grading; Assignment of presentation days and code review days; First semester retrospective.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0124">
+  Thursday 01/24 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>01/25 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0128">
+  Monday 01/28 - Introduction to Ethics
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Professor led discussion of Introduction to Ethics</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Read:
+    <UL>
+      <LI>Quinn: Ethics for the Information Age - Chapter #2 (via Moodle)
+      <LI>Be able to describe and apply each of the five workable ethical theories discussed in the book. You should also be aware of the major arguments for and against each of these theories.
+      <LI>The article <a href="https://splinternews.com/black-teenagers-vs-white-teenagers-why-googles-algori-1793857436">'Black teenagers' vs. 'white teenagers': Why Google's algorithm displays racist results</a>.
+    </UL>
+    
+    <p><LI>Consider the discussion questions:
+    <UL> 
+      <!-- DROP THIS FIRST QUESTION AS AN OPTION FOR RESPONSE ON MOODLE NEXT TIME -->
+      <LI>On p. 83, it is suggested that "the right to privacy" should be added to "life, liberty and property" when applying Social Contract Theory. What is privacy? Should it be a right? If not, why not? If so, is it a positive or negative right? An absolute right or a limited right?
+      <LI>Consider the scenario in 2.8.2 (p. 78) from the perspective of Kantianism and Act Utilitarianism. Was the release of the worm morally right under each framework?
+      <LI>Consider the scenario in 2.10.2 (p. 91) from the perspective of Rule Utilitarianism and Social Contract Theory. What would each of these frameworks require that Josh do?
+      <!-- CHANGE TO ASK WHICH FRAMEWORK IS MOST APPLICABLE? WHAT DOES IT SAY? -->
+      <LI>Imagine you were in the Google CEO's position and had to decide whether or not to alter the image search algorithm. Give an argument for this decision from the perspective of each of the workable ethical frameworks: Kantianism, Act Utilitarianism, Rule Utilitarianism, Virtue Ethics and Social Contract Theory. Do they all give the same answer?
+    </UL>  
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>01/31 - Blog post reflecting on Introduction to Ethics (Individual)
+    <LI><a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0131">
+  Thursday 01/31 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/01 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projinstalldev.html">Developer Install Activity</a> |
+        <a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0204">
+  Monday 02/04 - Ethical Issues with Autonomous Cars
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Professor led discussion on Ethical Issues with Autonomous Cars</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Lin: Why Ethics Matter for Autonomous Cars (available on Moodle, 14 pages)
+    <LI>Bonnefon, Shiff &amp; Rahwan: <a href="http://science.sciencemag.org/content/352/6293/1573/tab-pdf">The Social Dilemma of Autonomous Vehicles</a> (3 pages)
+    <LI>Maxmen: <a href="https://www.nature.com/magazine-assets/d41586-018-07135-0/d41586-018-07135-0.pdf">A Moral Map for AI Cars</a> (1 page)
+    <LI>Thierer: <a href="https://techliberation.com/2018/08/16/the-pacing-problem-the-collingridge-dilemma-technological-determinism/">The Pacing Problem, the Collinridge Dilemma &amp; Technological Determinism</a> (3 pages)
+    <p>  
+    <LI>Consider the discussion questions:
+    <UL> 
+      <LI>Should autonomous vehicles (AVs) use utilitarian models that will sometimes require sacrificing the vehicle's passengers? Would you want to own such a vehicle? Would you ride in one operated by a car service (e.g. Uber)? 
+      <LI>In situations where an accident is inevitable, what factors should an AV use, or not use, when targeting the accident victims?
+      <LI>Assuming AVs will contain utilitarian ethical models, should they be determined by the manufacturer? Legislation? Owner tunable?
+      <LI>Thierer says "We shape our tools and then our tools shape us." What does he mean? Can you think of examples that fit this statement? 
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Additional Sources:</b></td>
+  <td>
+  <UL>
+    <LI>Hevelke &amp; Nida-R&uuml;melin: <a href="https://link.springer.com/content/pdf/10.1007%2Fs11948-014-9565-5.pdf">Responsibility for Crashes of Autonomous Vehicles: An Ethical Analysis</a> (11 pages)
+    <LI>Gogoll &amp; M&uuml;ller: <a href="https://link.springer.com/content/pdf/10.1007%2Fs11948-016-9806-x.pdf">Autonomous Cars: In Favor of a Mandatory Ethics Setting</a> (18 pages)
+  </UL>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/07 - Blog post reflecting on Ethical Issues with Autonomous Cars (Individual)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0207">
+  Thursday 02/07 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/08 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0211">
+  Monday 02/11 - Social Media: Truth and Influence in On-line News/Media
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Social Media: Truth and Influence in On-line News/Media</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Rainie, Anderson &amp; Albright: <a href="http://www.pewinternet.org/2017/03/29/the-future-of-free-speech-trolls-anonymity-and-fake-news-online/">The Future of Free Speech, Trolls, Anonymity and Fake News Online</a>
+    <LI>Albright: <a href="https://www.ssoar.info/ssoar/bitstream/handle/document/55483/ssoar-mediacomm-2017-2-albright-Welcome_to_the_era_of.pdf?sequence=1">Welcome to the era of fake news</a>
+    <LI>Schwartz: <a href="https://www.theguardian.com/technology/2018/nov/12/deep-fakes-fake-news-truth">You thought fake news was bad? Deep fakes are where truth goes to die</a>
+    <LI>Naughton: <a href="https://www.theguardian.com/commentisfree/2018/nov/25/populism-and-the-internet-a-toxic-mix-shaping-the-age-of-conspiracy-theories">Populism and the internet - a toxic mix shaping the age of conspiracy theories</a>
+    <p>  
+    <LI>Consider the discussion questions:
+    <UL> 
+      <LI>Albright discusses the following challenges surrounding mitigating Fake News dissemination: Transparency and Trust, Social Distortion, Attention Models, Trust and Data proposed. Which do you believe should primarily be addressed in the efforts to combat the spread of misinformation and reestablishment of truth in practice?
+      <LI>In a world where video "evidence" has become so important how might society combat the trouble of deep fakes? Should this be addressed in the creation of these technologies or in methods for dissemination? 
+      <LI>Tim Hwang, director of the Harvard-MIT Ethics and Governance of Artificial Intelligence Initiative, stated that the usage of generative adversarial networks (GANs) to create convincing deep fakes would not pose an immediate risk to elections, due to the level of expertise and time required to create such videos. Is there validity to this claim? 
+      <LI>Is there a point in which technology used to propagate fake news and deep fakes should be sanctioned or curtailed? Who bears responsibility for these ramifications (social, economic, political, etc.) of the damage caused by these technologies if we analyze this from a Kantian or Utilitarian perspective?
+    </UL>
+    <p>  
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/14 - Blog post reflecting on Social Media: Truth and Influence in On-line News/Media (Individual)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0214">
+  Thursday 02/14 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/15 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0218">
+  Monday 02/18 - No Class Meeting - Project Work Time
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0221">
+  Thursday 02/21 - No Class Meeting - Project Work Time
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/22 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0225">
+  Monday 02/25 - 5G and the Internet of Things
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Internet of Things</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>IBM Think Academy: <a href="https://www.youtube.com/watch?v=QSIPNhOiMoE">How it Works: Internet of Things</a> (3.5 minutes)
+    <LI>Ranger: <a href="https://www.zdnet.com/article/what-is-the-internet-of-things-everything-you-need-to-know-about-the-iot-right-now/">What is the IoT? Everything you need to know about the Internet of Things right now</a> (14 pages)
+    <LI>Scott: <a href="https://www.theglobeandmail.com/report-on-business/rob-magazine/the-future-is-smart/article24586994/">8 ways the Internet of Things will change the way we live and work</a> (20 pages)
+    <LI>Fruhlinger: <a href="https://www.csoonline.com/article/3258748/security/the-mirai-botnet-explained-how-teen-scammers-and-cctv-cameras-almost-brought-down-the-internet.html">The Mirai botnet explained: How teen scammers and CCTV cameras almost brought down the internet</a> (4 pages)
+    <LI>Fait: <a href="https://www.forbes.com/sites/forbestechcouncil/2018/09/07/how-the-5g-revolution-will-drive-future-innovations-of-iot/#76bff17c637e">How The 5G Revolution Will Drive Future Innovations Of IoT</a> (1 page)
+    <LI>Wheeler: <a href="https://www.nytimes.com/2019/01/21/opinion/5g-cybersecurity-china.html">If 5G Is So Important, Why Isn't It Secure?</a> (3 pages)
+    <p> 
+    <LI>Consider the discussion questions:
+    <UL>
+      <LI>What are the advantages and disadvantages of the Internet of Things?
+      <LI>In what ways should the Internet of Things be regulated to lower the downsides of it?
+      <LI>Who is responsible for the Mirai Botnet attack? Is it the consumers who didn't change their passwords? Manufacturers for using default passwords and not requiring a change? The government? Network service providers? Network admins? etc...
+      <LI>What level of control should consumers have on the collection, storage, and usage of the massive amount of personal data created by IoT devices? Who owns this data? What rights do consumers have over it?
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Additional Sources:</b></td>
+  <td>
+  <UL>
+    <LI>Cyber Security Degrees: <a href="https://cybersecuritydegrees.com/features/dangers-of-the-internet-of-things/">Dangers of the Internet of Things [Infographic]</a> (1 page)
+  </UL>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>02/28 - Blog post reflecting on 5G and the Internet of Things (Individual)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0228">
+  Thursday 02/28 - No Class Meeting - Project Work Time
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/01 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0304">
+  Monday 03/04 - Project Checkpoint #1 - Group I</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="syllabus.html#ProjCheckpoint">Project Checkpoint &amp; Presentation</a>.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0307">
+  Thursday 03/07 - Project Checkpoint #1 - Group II</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="syllabus.html#ProjCheckpoint">Project Checkpoint &amp; Presentation</a>.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/08 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbuggardening.html">Bug Gardening Activity</a>  |
+        <a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0311">
+  Monday 03/11 - Spring Break
+</th>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0314">
+  Thursday 03/14 - Spring Break
+</th>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0318">
+  Monday 03/18 - Blockchain
+</th>
+]
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Blockchain</td>
+</tr>
+ <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Youtube video: <A href="https://www.youtube.com/watch?v=SSo_EIwHSd4&feature=youtu.be">How does a blockchain work - Simply Explained</a> (6 minutes)
+    <LI>Ian Khan: <a href="https://blockgeeks.com/guides/what-is-blockchain-technology/">What is Blockchain Technology? A Step-by-Step Guide For Beginners</a> (19 pages)
+    <LI>Allison Berke: <a href="https://hbr.org/2017/03/how-safe-are-blockchains-it-depends">How Safe Are Blockchain? It Depends</a> (4 pages)
+    <LI>DLA Piper: <a href="https://www.dlapiper.com/en/denmark/insights/publications/2017/06/blockchain-background-challenges-legal-issues/">Blockchain: background, challenges and legal issues</a> (8 pages)
+    <LI>Bernard Marr: <a href="https://www.forbes.com/sites/bernardmarr/2018/07/16/here-are-10-industries-blockchain-is-likely-to-disrupt/#6f82ef93b5a2">Here Are 10 Industries Blockchain is Likely To Disrupt</a> (3 pages)
+    <p> 
+    <LI>Consider the discussion questions:
+    <UL>
+      <LI>What are the advantages and disadvantages of the blockchain technology? Currency, Accessibility, Usability (Reading 1)
+      <LI>In the reading, Allison Berke listed some security issues with public and private blockchains. 
+Who should be held responsible to verify and read the transactions in blockchain?
+      <LI>From the reading by DLA Piper, the author listed some legal issues with blockchain due to its nature as a decentralized currency. Should individual government start putting restrictions and setting up laws to make sure that blockchain is working as intended? What laws do you think should be implemented to help regulate this?
+      <LI>In the future, do you think blockchain can replace the current currency? Do you think that this is a productive way to go?
+      <LI>Which industry is most likely to be impacted by the blockchain technology? What are the potential social and ethical impacts on the society as a whole?
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/21 - Blog post reflecting on our Blockchain readings and discussions (Individual)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0321">
+  Thursday 03/21 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/22 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0325">
+  Monday 03/25 - Government Surveillance
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Government Surveillance</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Glenn Greenwald: <a href="https://www.youtube.com/watch?v=pcSlowAhvUk&fbclid=IwAR379cpMgMWhvX5kQdrEnTFtqUC6Yi6xghIxK1GjLdlc_nFcQ7RcHn-mYNc">Why Privacy Matters</a> (TED talk)
+    <LI>Paul Mozer: <a href="https://www.nytimes.com/2018/07/08/business/china-surveillance-technology.html?fbclid=IwAR3J3tUjJtyQxKKTkOFa6EddCNzH9h48hru7g-CQGYZKIBxgcAw0J5VpX_s">Inside China's Dystopian Dreams: A.I., Shame and Lots of Cameras</a> (New York Times)
+    <LI>Arjun Kharpal: <a href="https://www.cnbc.com/2016/03/29/apple-vs-fbi-all-you-need-to-know.html?fbclid=IwAR2l0lpFa76_kRJLgwbMAowmnJievUupvRXDDMcTB7H0YsVhg3bnkYsh-8U
+">Apple vs FBI: All you need to know</a> (CNBC)
+    <LI>Edward Snowden: <a href="https://www.bbc.com/news/world-us-canada-23123964?fbclid=IwAR3neBhw2I7ctj-bxcW0NFQXv-RxAkcuLksg-9PLwVU8yqpvV9vL-1ykUP4">Leaks that exposed US spy programme</a> (BBC)
+    <LI>Chris Duckett: <a href=" https://www.zdnet.com/article/too-many-false-alarms-for-population-wide-facial-surveillance-nec/">Too many false alarms for population-wide facial surveillance: NEC</a> (ZDNet)
+    <p> 
+    <LI>Consider the discussion questions:
+    <UL>
+      <LI>What are the arguments and counterarguments to the position "you shouldn't worry about government surveillance unless you have something to hide?" What's your position?
+      <LI>What was the primary issue in the FBI vs. Apple case? What was the outcome? What are your thoughts on this outcome?
+      <LI>How do cultural norms affect outlooks on surveillance policies in different countries?
+      <LI>Would widespread A.I. and facial recognition call for an adjustment of the law?
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/28 or 04/01 - Blog post reflecting on Government Surveillance (Individual)
+    <LI>03/28 or 04/01 - Prepare <a href="coderev.html">Code Review Presentation</a>
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0328">
+  Thursday 03/28 - Code Reviews Day 1
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Individual <a href="coderev.html">code review</a> presentations.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>03/28 or 04/01 - Blog post reflecting on Government Surveillance (Individual)
+    <LI>03/28 or 04/01 - Prepare <a href="coderev.html">Code Review Presentation</a>
+    <LI>03/29 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0401">
+  Monday 04/01 - Code Reviews Day 2
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Individual <a href="coderev.html">code review</a> presentations.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0404">
+  Thursday 04/04 - Code Reviews Day 3
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Individual <a href="coderev.html">code review</a> presentations.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/05 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>04/11 - Draft of <a href="poster.html">Honors Poster</a> (Honors)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0408">
+  Monday 04/08 - No Class Meeting - Project Work Time
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/11 - Draft of <a href="poster.html">Honors Poster</a> (Honors)
+    <LI>04/15 - Draft of <a href="poster.html">H/FOSS Poster</a> (Team)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0411">
+  Thursday 04/11 - Artificial Intelligence: Warfare, Judicial Systems &amp; Beauty Contests
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Artificial Intelligence: Warfare, Judicial Systems &amp; Beauty Contests</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Hauser: <a href="https://www.youtube.com/watch?v=eV_tx4ngVT0">Can we protect AI from our biases?</a> (12 min video)
+    <LI>Pandya: <a href="https://www.forbes.com/sites/cognitiveworld/2019/01/14/the-weaponization-of-artificial-intelligence/#2dba23983686">The Weaponization Of Artificial Intelligence</a> (4 pages)
+    <LI>Angwin, Larson, Mattu and Kirchner: <a href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing">Machine Bias: There's software used across the country to predict future criminals. And it's biased against blacks</a> (10 pages)
+    <LI>GoodWorksLabs: <a href="https://medium.com/datadriveninvestor/how-ai-will-transform-the-criminal-justice-system-31b6f3e05b33">How AI will transform the Criminal Justice System</a> (4 pages)
+    <LI>Levin: <a href="https://www.theguardian.com/technology/2016/sep/08/artificial-intelligence-beauty-contest-doesnt-like-black-people">A beauty contest was judged by AI and the robots didn't like dark skin</a> (5 pages)
+    <p> 
+    <LI>Consider the discussion questions:
+    <UL>
+      <LI>Which military uses of AI should be allowed, restricted and outright banned?
+      <LI>Who is held responsible for the bias displayed in sentencing 'offenders' when AI is used in the Judicial System ? (Consider the judge, the law system that defined the 'criminogenic needs', the programmer etc)
+      <LI>The article 'Machine bias in criminal sentencing' mentions that the algorithms measure 'criminogenic needs'.  Do you think the results of the algorithms reveal flaws within our society? Please give examples. How do you think the algorithms could be improved in order to remain objective? Explain your response.
+      <LI>Consider the talk "Can we protect AI from our biases?" and the article "How AI will transform the criminal justice system". In which ways could AI help eradicate or promote bias in beauty contests? What about in judicial systems?
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Additional Sources:</b></td>
+  <td>
+  <UL>
+    <LI>Cummings: <a href="https://www.chathamhouse.org/sites/default/files/publications/research/2017-01-26-artificial-intelligence-future-warfare-cummings-final.pdf">Artificial Intelligence and the
+Future of Warfare</a> (18 pages)
+    <LI>Beauty.AI: <a href="https://www.youtube.com/watch?v=TMHWC_d4xnE&feature=youtu.be">Beauty Contest Judged by Robots</a> (1 min video)
+  </UL>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/12 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>04/15 - Blog post reflecting on Warfare, Judicial Systems &amp; Beauty Contests (Individual)
+    <LI>04/15 - Draft of <a href="poster.html">H/FOSS Poster</a> (Team)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0415">
+  Monday 04/15 - Alumni Guest (John E. Jones)
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Discussion with guest speaker and Dickinson CS alumnus John E. Jones, Vice President of Interactive Strategies at The Case Foundation.</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Review the website of <a href="https://casefoundation.org/">The Case Foundation</a> to learn about the foundation and what they do.
+    <LI>Read at least two blog entries from <a href="https://casefoundation.org/blog/">The Case Foundation Blog</a>
+    <LI>Cohen: <a href="https://www.newyorker.com/science/elements/after-years-of-abusive-e-mails-the-creator-of-linux-steps-aside">After Years of Abusive E-mails, the Creator of Linux Steps Aside</a> (4 pages)
+    <LI>Oberhaus: <a href="https://motherboard.vice.com/en_us/article/yw43kj/what-happens-if-linux-developers-remove-their-code">The Culture War Comes to Linux</a> (8 pages)
+  </UL>
+    <p>
+    <LI>Based on the above readings, prepare one or two questions you might like to ask of John during his visit.
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>    
+    <LI>04/17 - Revise &amp; Submit <a href="poster.html">Honors Poster</a> for Printing (Honors)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0418">
+  Thursday 04/18 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/19 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>04/22 - Revise &amp; Submit <a href="poster.html">H/FOSS Poster</a> for Printing (Team)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0422">
+  Monday 04/22 - Social Media: Privacy and Personal Data
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="discussion.html">Student led discussion</a> of Social Media: Privacy and Personal Data</td>
+</tr>
+<tr>
+  <td align=right><b>Prep/Reading:</b></td>
+  <td>
+  <UL>
+    <LI>Berzinya: <a href="https://turtler.io/news/data-privacy-in-social-media-who-takes-responsibility-and-data-protection-as-a-priority-feature">Data Privacy in Social Media: Who Takes Responsibility and Data Protection as a Priority Feature</a> (12 pages)  
+    <LI>Silverstein: <a href="https://www.cbsnews.com/news/millions-facebook-user-records-exposed-amazon-cloud-server/">Hundreds of millions of Facebook user records were exposed on Amazon cloud server</a> (2 pages)  
+    <LI>I&T Today: <a href="https://innotechtoday.com/heres-hacker-behind-largest-ever-social-media-data-breaches/">Here's the hacker behind the largest-ever social media data breachesM</a> (4 pages)
+    <LI>CBS News: <a href="https://www.cbsnews.com/news/homeland-security-plans-to-collect-immigrants-social-media-info/">Homeland Security plans to collect immigrants' social media info</a> (3 pages)
+    <LI>Lacey: <a href="https://www.youtube.com/watch?v=JIo-V0beaBw">The Future of Your Personal Data - Privacy vs Monetization</a> (17 minutes)
+    <p> 
+    <LI>Consider the discussion questions:
+    <UL>
+      <LI>As mentioned by Berzinya, "When the data breach happens, CEO's are likely to be blamed." Is that the only person everyone should blame? Are there any other parties that you should blame? What responsibilities do they have in it? Moreover, do we, as a user, have any personal responsibility?
+      <LI>While the scenarios provided in Silverstein's article are sometimes unavoidable, what responsibilities does the parent company have when leaks occur from third parties?
+      <LI>Big data has mutual benefits as businesses are getting customers' insights and customers are getting personalized features, but how should we draw the moral line on where businesses should limit their benefits?
+      <LI>What are the social implications of Immigrant's social media information being collected? Does it infringe on First Amendment rights?
+    </UL>
+    <p>
+    <LI>Post a thoughtful response to one (or more) of these questions to the Moodle forum. In addition, feel free to comment on, expand upon or respond to other's posts or to suggest additional questions or topics for discussion during class.
+  </UL>
+  </td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/25 - Blog post reflecting on Social Media: Privacy and Personal Data (Individual)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0424">
+  Wednesday 04/24 - Science Research Poster Session (HUB Social Hall - 4:30-6:00)
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>All College science research poster presentations. Attend and support Adam, Ashir &amp; Daniel!</td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0425">
+  Thursday 04/25 - Work Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Project work time.</td>
+</tr>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>04/26 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>05/07 - <a href="finalpres.html">Prepare Final Project Presentation</a> (Team)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+	<a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0429">
+  Monday 04/29 - SL/CBL Poster Session (Rector Atrium - 4:30-6:00)
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>All College SL/CBL poster presentations in place of normal class meeting</td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0502">
+  Thursday 05/02 - Wrap Up Day
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td>Course Evaluations; Post-course Surveys; Reflective SL/CBL Blog post.</td>
+<tr>
+  <td align=right><b>Homework:</b></td>
+  <td>
+  <UL>
+    <LI>05/03 - <a href="syllabus.html#fivefifteen">Post 5-15s</a> (Individual, Team, Honors)
+    <LI>05/07 - <a href="civiclearningblog.html">Blog post reflecting on your Involvement with Open Source Communities</a>. (Individual)
+    <LI>05/07 - <a href="finalpres.html">Prepare Final Project Presentation</a> (Team)
+    <LI><a href="projbugfix.html">Bug Fix Activity</a> |
+        <a href="projcontrib.html">Project Contribution Activity</a>
+  </UL>
+  </td>
+</tr>
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+<tr><td colspan=2><br></td><tr>
+<th colspan=2 bgcolor="#2ECCFA">
+  <a name="0507">
+  Tuesday 05/07, 2:00pm - Final Exam Period - Project Final Presentations
+</th>
+<tr>
+  <td align=right><b>Overview:</b></td>
+  <td><a href="finalpres.html">Final Presentation</a></td>
+</tr>
+
+</table>
+</UL>
+
+<hr>
+<p>All locally hosted materials for this course are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+</p><p>External materials linked to by this page may be governed by other licenses.
+</p>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+</BODY>
+</HTML>

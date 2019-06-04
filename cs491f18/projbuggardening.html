@@ -1,0 +1,179 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Selected Project Bug Gardening</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Selected Project Bug Gardening Activity</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>In the <a href="projinstalluser.html">Project User Install</a> and <a href="projinstalldev.html">Project Developer Install</a> Activities you became familiar with your project from the user, developer and documentation contributor perspectives. In this activity you will become more familiar with the project as a software tester and developer by investigating bugs.
+
+<p>
+<font size=+1 color='#006400'>
+<b>Assignment</b>
+</font>
+
+  <p>In this activity you will:
+  <UL> 
+    <LI>Develop an understanding of your project's process for dealing with bugs/issues (<a href="#BugInfo">Bug Information</a>);
+    <LI>Investigate bug/issue tickets to help with the maintenance of your project's bug/issue tracker (<a href="#BugGardening">Bug Gardening</a>);
+  </UL>
+</UL>
+
+<a name="GetStarted">
+<p><b>Getting Started:</b>
+<UL>
+  <p>For this activity there will be a number of deliverables that will be collectively produced by the project team and posted to the team Wiki page. So before going further, ensure that a link for a new Wiki page for the <i>Bug Activities</i> has been added to your team's Wiki page. The project sub-teams will each be adding to this new Wiki page throughout this activity. It is the full team's responsibility to keep this new Wiki page well organized and nicely formatted.
+
+<p>Track and document what you do using your sub-team's Slack live-log. Each sub-team is expected to invest an appropriate amount of time and effort on the activities each week (7-10 hours/week). In addition the time and effort are to be spread across the week in multiple working sessions. Work on the activities will be assessed via the Project Checkpoints as described in the <a href="syllabus.html">Course Syllabus</a>. When your sub-team believes it has satisfied the <a href="#compcrit">Completion Criteria</a>, schedule an appointment with the course faculty for review.
+</UL>
+
+<a name="BugInfo">
+<p><b>Bug Information:</b>
+<UL>
+  <p>Every H/FOSS project worth its salt will have a bug/issue tracker. In addition to that many projects also have resources (documents/communication channels/etc) that describe the processes and expectations for reporting/triaging/fixing bugs or provide ways to discuss bugs. 
+
+<p>Find and read all of the bug-related resources that your project provides. Under a heading of "Bug Resources" on your team's <i>Bug Activities</i> Wiki page create, collectively as a team, an annotated list of the useful bug-related resources that you found. Be sure to include the bug/issue tracker itself, information about how developers claim bugs on which they plan to work, and how bug fixes are contributed back to the project.  This list should be a one-stop shop for all of the information you need about dealing with bugs in your project. Entries in the list should be of the form:
+  <UL>
+    <LI><a href="http://example.com/BugInfo.html">Title as Link to Resource</a>: Short description of the resource and how it may be useful.
+  </UL>
+
+  <p>Finally, before continuing read Simon Tatham's article on <a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html ">How to Report Bugs Effectively</a>.
+</UL>
+
+<a name="BugGardening">
+<p><b>Bug Gardening:</b>
+<UL>
+  <p>Bug gardening is a name often given to the task of maintaining the bug/issue tracker in a project.  This will include things such as assigning tags and/or priorities to tickets, confirming the existence of reported bugs, requesting additional information on submitted tickets, adding useful information to existing tickets, eliminating duplicate tickets, connecting potentially related tickets, closing completed or out of date tickets, etc.  In this part of the activity you will try to help your project by doing some bug gardening.
+
+  <p>Each sub-team should investigate the existence of at least 3 <i>suspect</i> bugs in the bug/issue tracker for your project. The bugs investigated by each sub-team should be different from those of the other sub-groups.  A suspect bug is one that has not been closed but that may not actually exist in the current development version of the product. Suspect bugs can arise in a variety of ways. Someone may simply have forgotten to close the ticket, Someone may have re-discovered and fixed this bug while working on another ticket or the relevant features may have been eliminated from the product. To identify suspect tickets, you might look at old tickets, tickets with version numbers that do not match the current version, and older tickets marked as low priority. Any information that you were able to identify earlier about how the project handles/processes bugs may also help in finding suspect bugs (e.g. if the project uses an in-progress tag for tickets undergoing active work, a ticket tagged in-progress but that hasn't been updated in a long time might be suspect). The best suspect bugs to investigate will the those with a detailed list of steps for replicating the bug.  If you have trouble identifying suspect bugs, you might explain (briefly) to the community what you are doing.  They may then have suggestions for how to identify suspect bugs in the project or suggestions for other related things you might do to help maintain the issue tracker.  If the community has other suggestions, please discuss them with the course faculty to possibly arrange alternative completion criterion as appropriate.
+
+  <p>All of the suspect bugs investigated by the full project team should collected together and documented under the heading "Suspect Bugs" on your team's Bug Activities Wiki page.  This section of the Wiki page should include a table with one row for each suspect bug. The information in this table should be brief, full details will be contained in your Slack live-logs. The table below shows the required columns, gives a short explanation of each column and a few sample rows:
+
+  <center>
+  <table border=1>
+    <tr>
+      <th>Bug ID</th>
+      <th>Sub-Team</th>
+      <th>Description</th>
+      <th>Why Suspect</th>
+      <th>Exists</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td><i>The identifier for the bug as a link into the issue tracker</i></td>
+      <td><i>Initials of sub-team members</i></td>
+      <td><i>A short description of the bug</i></td>
+      <td><i>A short explanation of why the bug suspect</i></td>
+      <td><i>Yes if able to confirm existence of the bug in the latest dev version, No if able to confirm it does not exist. Uncertain, if neither yes or no. Along with brief comments.</i></td>
+      <td><i>Description of any action taken on the bug. Include links to any artifacts that document your actions.</i></td>
+    </tr>
+    <tr>
+      <td><a href="http://example.com/bug1234.html">1234</a></td>
+      <td>GB/XY</td>
+      <td>Deposit field allows negative amounts.</td>
+      <td>Ticket dated 2008, latest version released 2016.</td>
+      <td>No. Followed steps in ticket to reproduce and negative amount was rejected.</td>
+      <td>Commented on <a href="http://example.com/bug1234.html#comments">the ticket</a> suggesting it be closed.</td>
+    </tr>
+
+    <tr>
+      <td><a href="http://example.com/bugX5432b.html">X5432b</a></td>
+      <td>GB/XY</td>
+      <td>UI unresponsive when sorting data.</td>
+      <td>Ticket posted for version 1.3, latest product version is 2.7.</td>
+      <td>Yes. Confirmed unresponsiveness when sorting the very large test data set.</td>
+      <td>Commented on <a href="http://example.com/bugX5432b.html#comments">the ticket</a> indicating problem was seen in Version 2.7 using the large test data set, but was not noticeable with the small test data set.</td>
+    </tr>
+
+    <tr>
+      <td><a href="http://example.com/bugAB392c.html">AB392c</a></td>
+      <td>GB/XY</td>
+      <td>Program crashes on dates before 1970.</td>
+      <td>Ticket posted for version 1.3, latest product version is 2.7.</td>
+      <td>Uncertain. Unable to replicate bug because steps for replication were incomplete/unclear with regard to version 2.7.</td>
+      <td>Commented on <a href="http://example.com/bugAB392c.html#comments">the ticket</a> explaining source of confusion and asking for clarification.</td>
+    </tr>
+  </table>
+  </center>
+
+  <p>If a sub-team happens to identify a new bug that does not already appear in the issue tracker they may open a new ticket for the bug in lieu of one of the suspect bug reports. The corresponding row in the table above should link to and describe their new issue ticket. 
+</UL>
+
+<p>
+<a name="compcrit">
+<font size=+1 color='#006400'>
+<b>Completion Criteria</b>
+</font>
+
+<p>The completion criteria that each sub-team must demonstrate for this activity are:
+
+  <UL>
+    <LI>A link on the team wiki to a <i>Bug Activities</i> page.  
+    <LI>A single, nicely formatted Bug Activities page built collaboratively by all sub-teams on the project.  This page must include the following sections and information:
+    <UL>
+      <LI><b>Bug Resources</b>: An annotated list of all of the bug related resources for the project.
+      <LI><b>Suspect Bugs</b>: The table of suspect bugs that were investigated along with the actions that were taken as described above.  Links in this table that qualify as Interactions or Contributions should also be linked in the sub-sections below. Yes, this is repeated information, but the separate organization is helpful to your instructor.
+      <LI><b>Interactions</b>: An annotated list, with links if possible, of any <i>interactions</i> that your team or sub-team had with the community during this activity (e.g. message board posts, mailing list messages, comments/clarifications on issues, etc.). Please indicate the date of the interaction and the sub-team that had the interaction. Note: Interactions are not required for this activity. However if they occur, please link them here for reference.
+      <LI><b>Contributions</b>: An annotated list, with links if possible, of any <i>contributions</i> that your team or sub-team made to the project during this activity (e.g. corrections/clarifications/additions to documentation, closed issues, etc.). Please indicate the date of the contribution and the sub-team that made the contribution. Note: Contributions are not required for this activity. However if you discover interesting information about a bug, you are highly encouraged to contribute what you find back to the community.  If you do comment on an issue ticket, please include the link here for reference.
+    </UL>
+    <LI>Each team member must be able to:
+    <UL>
+      <LI>Participate competently in a discussion of the bug resources for the project.
+      <LI>Show and competently discuss the issue ticket for one suspect bug (e.g. What is the issue? Why is it suspect?) Each sub-team member must select a different suspect bug.
+      <LI>Walk through a demonstration of what was done to investigate the suspect bugs.
+      <LI>Competently discuss the actions that were taken and show any artifacts (i.e. interactions or contributions) related to the actions.
+    </UL>
+</UL>
+
+<p>
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>http://foss2serve.org/index.php/Bug_Gardening
+  <LI>http://foss2serve.org/index.php/Bug_Selection
+  <LI>http://foss2serve.org/index.php/Research_Bug_Activity
+  <LI>http://foss2serve.org/index.php/Solving_A_Bug
+  <LI>http://foss2serve.org/index.php/Writing_a_bug_report
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

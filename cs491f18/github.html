@@ -1,0 +1,559 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Git/GitHub Workflow Activity</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Git/GitHub Workflow Activity</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>Many H/FOSS projects use GitHub as the repository for their source code.  This activity is designed to familiarize you with the common workflow elements for interacting with H/FOSS projects hosted on GitHub. The activity is divided into four parts:
+<OL>
+  <LI><a href="#Part1"><i>Part 1 - Before the First Class:</i></a> You will complete this before the first hands-on class period with Git/GitHub.  It will walk you through the process of configuring git, forking a repository on GitHub, cloning that repository to your local machine, and setting up an upstream remote in git.
+
+  <LI><a href="#Part2"><i>Part 2 - Hands-On in the First Class:</i></a> You will complete this part hands-on during the first class period.  It will walk you through the process of claiming an issue, creating a working branch, fixing the issue, pushing the fix to your GitHub repo, making a pull request, and keeping your local and remote repos into synch with upstream changes.
+
+  <LI><a href="#Part3"><i>Part 3 - Before the Second Class:</i></a> You will complete this part following the first class period and before the second.  In it you will repeat the process of claiming an issue, creating a branch, making a fix, pushing the fix to your GitHub repo and making a pull request.
+
+  <LI><a href="#Part4"><i>Part 4 - Hands-On in the Second Class:</i></a> You will complete this part hands-on during the second class period. It will walk you through the process of resolving conflicts with concurrent upstream changes. You will synchronize your repos with the upstream, use a graphical merge tool to resolve conflicts and update your pull request before finally resynchronizing your repo with the upstream one final time.
+</OL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Prerequisites:</b>
+</font>
+<p>A basic familiarity with git is helpful before beginning this activity.  The following sites provide good starting points:
+<UL>
+  <LI><a href="https://learngitbranching.js.org/">Learn Git Branching: Introduction Sequence (1-4)</a>
+  <LI><a href="https://git-scm.com/videos">Video Introduction to Git</a>
+</UL>
+
+<p>Have completed the <a href="swinstall.html">Software Installation</a> activity.  All work for this Git/GitHub Workflow Activity should be completed in the Ubuntu install from the Software Installation Activity.
+
+<p>In addition, you should have received and accepted the e-mail invitation from GitHub "to collaborate on the github-issues-activity repository."
+
+<p>
+<font size=+1 color='#006400'>
+<b>General Information:</b>
+</font>
+
+<p>In the following text, commands to be typed at the terminal are shown in <code>mono-spaced type</code> and any parts of those commands that you will need to customize for yourself are shown in angle brackets and <code><i>&lt;italics&gt;</i></code>. The angle brackets are not part of the command and should be omitted when you fill in the appropriate values.
+
+<p>Each time you reach a <img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">, please stop and wait.  These are points at which we will discuss subtleties of the operations and ensure that the class is progressing together.  If you reach a checkpoint before other groups, check to see if you might be able to provide assistance.
+
+<p>The slides used during the activity are available for later reference. The titles of the slides illustrating each task correspond to underlined sub-section namess below.
+<UL>
+  <LI><a href="githubslides.pdf">Git/GitHub Workflow Slides</a>
+</UL>
+
+<p>A cheatsheet with a short summary of each of the sets of commands that we use for particular tasks is also available.
+<UL>
+  <LI><a href="githubcheatsheet.html">GitHub cheat sheet</a>
+</UL>
+
+<a name="Part1">
+<font size=+1 color='#006400'>
+<b>Part 1: Before the First Class</b>
+</font>
+
+<p>In order to allow us to focus on the more interesting and complicated parts of git/GitHub in class you are asked to do some parts of this activity now, before the first class period.  You'll also be asked after this class to do some additional work in preparation for the second class period.
+
+<UL>
+  <p><u>Configuring git</u>
+
+  <p>There are a few settings in the git configuration that need to be set before we begin. Note that these commands will only need to be issued once on each machine where you use git.  Issue the following commands (customizing as appropriate) to setup the git configuration:
+  <OL>
+    <LI><code>git config --global user.name <i>&lt;GitHubUserName&gt;</i></code>
+    <LI><code>git config --global user.email <i>&lt;you@email.org&gt;</i></code>
+    <LI><code>git config --global push.default simple</code>
+    <LI><code>git config --global merge.tool meld</code>
+    <LI><code>git config --global mergetool.keepBackup false</code>
+    <LI><code>git config --global credential.helper cache</code>
+  </OL>
+
+  <p>Use the following command to ensure that you have set all of the configurations:
+  <UL>
+    <LI><code>git config --global --list</code>
+  </UL>
+
+  <p><u>Forking the Upstream</u>
+
+  <p>Any H/FOSS project on which you will work will maintain a repository on a git compatible site that contains all of the code for the project.  We will use GitHub, but a similar process exists for all of the others as well.  The project's repository will be read-only except for the core project team that manages the project.  So to work on the code for the project you will create a copy of the repository in your own GitHub account. The process of making this copy is called <i>forking</i> and the repository belonging to the H/FOSS project itself is called the <i>upstream repository</i>.  
+
+  <p>To fork the Upstream Repository:
+  <OL>
+    <LI>Log into your GitHub account
+    <LI>Go to the repository for the project in GitHub
+    <UL>
+      Often you would have this URL or you can use the search feature in GitHub.  For this activity you will need to clone the <a href="https://github.com/COMP491/github-issues-activity-f18">COMP491/github-issues-activity</a> repository.
+    </UL>
+    <LI>Click on the "Fork" button in the upper right hand corner.
+    <LI>If a pop-up dialog appears, select your GitHub account from those shown.
+    <LI>Look at your repositories in GitHub and verify that you have a fork of the git-hub-issues-activity repository.
+  </OL>
+
+  <p><u>Cloning your Origin</u>
+
+  <p>The fork of the upstream repository in your GitHub account is called your <i>origin repository</i>.  Because this repository is in your GitHub account you will be able to both read and write to this repository. It will provide cloud storage for all of the work you do on the project and will also be the means for contributing code back to the main project through pull requests. To work on the code however, you will <i>clone</i> your origin repository onto your local machine making a copy of it into a <i>local repository</i>. 
+
+  <p>To clone your origin repository:
+  <OL>
+    <LI>From the github-issues-activity repository click the green "Clone or Downlaod" button.
+    <LI>Make sure that the URL shown has your GitHub user name in it.
+    <LI>Click the little clipboard icon to copy your Origin Repository URL.
+    <LI>Open a terminal window on your machine.
+    <LI>Navigate to the directory where you want to store your cloned repository.
+    <LI>Use the command: <code>git clone <i>&lt;Origin Repository URL&gt;</i></code>
+    <LI>Verify that you now have a local repository:
+    <OL>
+      <LI>You should have a directory named <code>github-issues-activity</code> in the current directory.
+      <LI>Change into the <code>github-issues-activity</code> directory.
+      <LI>Verify that it contains three files (<code>Calculator.java Instructor.md README.md</code>).
+    </OL>
+  </OL>
+
+  <p><u>Setting the Upstream Remote</u>
+
+  <p>You now have a local repository which is a clone all of the code in your origin repository, which was forked from the upstream repository. Your origin repository and the upstream repository are both referred to as <i>remote repositories</i> in git terminology, reflecting that they are not local to your machine.  The git tool on your machine will keep track of the remote repositories (i.e. your origin and the upstream) corresponding to your local repository. This will be useful when working on H/FOSS projects to push changes from your local repository to your origin and to pull changes made by others in the upstream into your local repository. However, at this time your git tool only knows about your origin remote because that is the repository you cloned. You will need to tell git where to find the upstream repository.
+
+  <p>To set the Upstream Repository:
+  <OL>
+    <LI>Change into the <code>github-issues-activity</code> directory.
+    <LI>Use the command: <code>git remote -v</code>
+    <UL>
+      This will list all of the remote repositories that git knows about.  At this time it should list only your origin repository (2 lines, one for fetch and one for push).  Verify that the URL for the origin contains your GitHub username in the URL. So something similar to:
+      <p>
+      <UL><code>
+        origin	https://github.com/braughtstu/github-issues-activity.git (fetch)<br>
+        origin	https://github.com/braughtstu/github-issues-activity.git (push)
+      </code></UL>
+      <p>
+      If it does not and instead contains the course GitHub URL from which you forked the repository you will need to delete the <code>github-issues-activity</code> directory and repeat the cloning your origin step above before continuing.
+    </UL>
+    <LI>Go to the upstream repository on GitHub.
+    <LI>Use the "Clone or Download" button to copy the upstream repository URL.
+    <LI>Use the command: <code>git remote add upstream <i>&lt;Upstream Repository URL&gt;</i></code>
+    <LI>Use the command: <code>git remote -v</code>
+    <UL>
+      You should now see four lines (2 for origin and 2 for upstream). The lines for upstream should contain the course GitHub URL and those for origin should contain your GitHub username. So something like:
+      <p>
+      <UL><code>
+        origin	https://github.com/braughtstu/github-issues-activity.git (fetch)<br>
+        origin	https://github.com/braughtstu/github-issues-activity.git (push)<br>
+        upstream	https://github.com/COMP491/github-issues-activity.git (fetch)<br>
+        upstream	https://github.com/COMP491/github-issues-activity.git (push)
+      </code></UL>
+    </UL>
+  </OL>
+
+  <p><u>Snapshot</u>
+
+  <p>Make snapshot of your virtual machine!
+
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+</UL>
+
+<p>
+<a name="Part2">
+<font size=+1 color='#006400'>
+<b>Part 2: Hands-On in the First Class</b>
+</font>
+
+<p>In a common GitHub workflow you will, as you have done, fork a repository (the Upstream repo) into your own GitHub account (your origin repo) and then clone that to your local machine (your Local repo).  At that point your local repo, your origin repo and the upstream repo will all be identical. In addition, each of these repositories will have a <i>master branch</i>, which contains the current reference version of the code according to the upstream repository.
+
+<p>In practice you will never edit code on the master branch. Instead, each time you want to work on the code (add a feature, fix a bug, etc) you will create a new <i>feature branch</i> and edit the code there. The feature branch behaves like it is a full copy of the master branch, but git is smart enough to just store the changes you make without making a full copy. In other words, it really just keeps track of the changes that would have to be made to get from the master branch to the version in your feature branch. By editing code on your feature branch, you will be able to leave the master branch in a state that is consistent with the upstream repository. This will be very helpful in integrating changes made by others into your local and origin repositories.  It also has the advantage of making it easy to discard changes if you decide they are not working out.
+
+<p>As you work on the feature or bug fix you'll <i>commit</i> changes to the feature branch in your local repo.  When you've finished work on the feature or bug fix you'll push your feature branch to your origin and then issue a pull request for that feature branch to the upstream.  The manager of the upstream can then merge your changes into the project (most likely after asking for some additional work).  
+
+<p>The following steps walk you through the basic process of creating and working on a feature branch, committing changes to your local repository, pushing a feature branch to your origin, creating a pull request and finally bringing your local and origin master branches back into sycnh with the upstream.
+
+<UL>
+  <p><u>Claim An Issue</u>
+
+  <p>Go to the GitHub <i>Issues</i> tab on the upstream repository and browse the "Round1" bugs.  Comment on one of the "Round1" tickets that you want to fix.  Refresh the page and check if you are the first commenter on the ticket. If you are, then the bug is yours.  If you are not the first commenter on the issue try another until you are!
+ 
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Branch and Fix</u>
+
+  <p>As described above you should never edit code on the master branch.  So any time you plan to make changes to the code you will need to create a new feature branch.
+
+  <p>To create a feature branch:
+  <OL>
+    <LI>Open a terminal on your machine.
+    <LI>Change into the directory containing your local repository.
+    <LI><code>git branch</code>
+    <UL>
+      This will list all of the branches in your local repository.  Currently there is only a master branch. Also notice that an * appears beside master. This indicates that the files on which you are working are those as they exist in the master branch.
+    </UL>
+    <LI><code>git branch round1fix</code>
+    <UL>
+      This creates a new branch named round1fix in your local repository.
+    </UL>
+    <LI><code>git branch</code>
+    <UL>
+      Notice the difference.
+    </UL>
+    <LI><code>git checkout round1fix</code>
+    <UL>
+      This will switch you to the round1fix branch and allow you to edit the files on that branch, ensuring that the files in the master branch are unchanged and remain consistent with the upstream.
+    </UL>
+    <LI><code>git branch</code>
+    <UL>
+      Notice the difference.
+    </UL>
+  </OL>
+
+  <p>Now edit the <code>Calculator.java</code> file to make the fix described in the issue that you claimed.  Be sure not to edit any other code in the class.
+  <OL>
+    <LI><code>gedit Calculator.java</code>
+  </OL>
+
+  <p>If time permits you should also be sure that your modified code compiles:
+  <OL>
+    <LI><code>javac Calculator.java</code>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Status, Stage and Commit</u>
+
+  <p>When you edit a file you are changing its contents but not the copy that is in your local repository. To make your changes part of the local repository you will <i>commit</i> the changes to the repository. There are several steps to this process.
+
+  <p>Determine which files have been changed, add the changed files to be committed to the repository to the <i>staging area</i> and confirm that they have been added:
+  <OL>
+    <LI><code>git status</code>
+    <LI><code>git add <i>&lt;FileToAdd&gt;</i></code>
+    <LI><code>git status</code>
+  </OL>
+
+  <p>Once the files are in the staging area they can be committed to the repository. Each commit should reflect a complete unit of work and the commit should have a clear message indicating what that work was.
+
+  <p>Commit your change to your local repository and verify they have been committed:
+  <OL>
+    <LI><code>git commit -m "<i>a descriptive message here.</i>"</code>
+    <LI><code>git status</code>
+  </OL>
+
+  <p>You can also see a list of the commits that have been made to the repository:
+  <OL>
+    <LI><code>git log</code>
+    <p>return - advance one line<br>
+        space - advance one screen<br>
+        q - terminate log listing 
+  </OL>
+
+  <p>Just to get a little more feel for the way your local repository behaves do the following:
+  <OL>
+    <LI><code>cat Calculator.java</code>
+    <UL>
+      Is your change there?
+    </UL>
+    <LI><code>git checkout master</code>
+    <LI><code>git branch</code>
+    <LI><code>cat Calculator.java</code>
+    <UL>
+      Is your change there? Why not?
+    </UL>
+    <LI><code>git checkout round1fix</code>
+    <LI><code>git branch</code>
+    <LI><code>cat Calculator.java</code>
+    <UL>
+      Is your change there?
+    </UL>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+ 
+  <p><u>Push Branch to Origin</u>
+
+  <p>The changes you have made are now in your local repository with a nice descriptive commit message. To contribute those changes to the original project you'll need to first push your feature branch from your local repository to your origin.
+
+  <p>Push your branch to origin:
+  <OL>
+    <LI><code>git push origin round1fix</code>
+
+    <p>You will be asked for your GitHub username and password.
+  </OL>
+
+  <p>Check that your feature branch and changes have been pushed to your origin by looking at the github-issues-activity repository in your GitHub account.  You should verify several things:
+  <UL>
+    <LI>There is a message about "Your recently pushed branches" that should indicate that round1fix was just pushed.
+    <LI>The dropdown list with "Branch: master" will now contain "round1fix" when you open it up.
+    <UL>
+      <LI>If you choose "round1fix" the <code>Calculator.java</code> file will contain your change.
+      <LI>If you choose "master" the <code>Calculator.java</code> file will not contain your change.
+    </UL>
+  </UL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Making a Pull Request</u>
+
+  <p>A <i>pull request</i> is the mechanism by which code changes that you have made can be contributed back to a project.  More specifically, it is a request, through GitHub, from you to a project asking them to consider incorporating changes you have in your fork of their project (i.e. your origin) into their repository (i.e. the master branch of the upstream). 
+
+  <p>Make a pull request for your round1fix branch:
+  <OL>
+    <LI>Open your github-issues-activty repository on GitHub.
+    <LI>Click the "New pull request" button.
+    <LI>Check that the "base fork" is set to the master branch of the upstream.
+    <UL>
+      This is always the branch where you want your changes to go.  In this case, into the master branch of the github-issues-activity repository for the course.
+    </UL>
+    <LI>Set the "head fork" to the round1fix branch in your github-issues-respository.
+    <UL>
+      This is always the branch that contains the changes that you want to have integrated into the upstream.
+    </UL>
+    <LI>Scroll down and verify that the pull request contains the changes that you have made:
+    <UL>
+      <LI>Your commit message should be listed.
+      <LI>The changes you made to the <code>Calculator.java</code> file should be shown.
+    </UL>
+    <LI>Click the green "Create pull request" button.
+    <LI>Edit the title and the "Leave a comment" box to give information about the changes you are proposing.
+    <UL>
+      Use this to explain to the project managers what you have done and why.  In particular, because this work resolves an issue from the issue tracker the issue should  be referenced in the comment.  Include the text "Fixes #<i>bugid</i>" (e.g. Fixes #123) to indicate which bug your changes have fixed.  We'll see later that this will allow the issue to be automatically closed if/when the project managers merge your pull request into the upstream master.
+    </UL>
+    <LI>Click the "Create pull request" button.
+  </OL>
+
+  <p>Once you create the pull request it will be reviewed by the project managers.  If everything looks good they will merge the changes into the master branch of the project.  The more likely scenario is that they will comment on your pull request with some additional things to consider or other changes to make.  When you do that you can then update your pull request by pushing the branch to your origin again.  They will then review the pull request again.  This cycle may repeat several times before your proposed changes are actually merged into the project.
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Synchronize Local and Origin with Upstream</u>
+
+  <p>Once your pull request, and everyone else's too, has been merged into the upstream master, the master branch of your local and origin repositories will be out of synch with (i.e. different than) the upstream master. This will occur frequently in any project where there are multiple developers contributing. When this happens you will need to synchronize your repositories with the upstream repository.  This is done by <i>pulling</i> the changes from the upstream master and <i>merging</i> them into to the master branch of your local repo and then finally pushing them to your origin. Because you have been careful to never edit the code in the master branch of your local repo this is an easy process.
+
+  <p>Verify that your local master is out of synch with the upstream:
+  <OL>
+    <LI><code>git checkout master</code>
+    <LI><code>git branch</code> 
+    <UL>
+      Ensure that you are on the master branch.
+    </UL>
+    <LI><code>cat Calculator.java</code>
+    <LI>Compare what you see in the terminal to the version of <code>Calculator.java</code> that is in the upstream repository on GitHub.
+    <UL>
+      <LI>Your local version should contain no changes, not even yours. The upstream should contain everyone's changes, including yours.
+    </UL>
+  </OL>
+
+  <p>Synchronize your master branches with the upstream master:
+  <OL>
+    <LI><code>git checkout master</code>
+    <LI><code>git branch</code> 
+    <UL>
+      Ensure that you are on the master branch.
+    </UL>
+    <LI><code>git pull upstream master</code>
+    <LI><code>cat Calculator.java</code>
+    <LI>Check that what you see now in the terminal is identical to the version of <code>Calculator.java</code> that is in the upstream repository on GitHub.
+    <LI>Verify that the changes do not yet exist in the version of <code>Calculator.java</code> in your origin on GitHub.
+    <LI><code>git push origin master</code>
+    <LI>Check that the version of <code>Calculator.java</code> in your origin on GitHub now contains the changes too, and thus your local and origin master branches are now in synch with the upstream.
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+
+  <p><u>Delete a Feature Branch</u>
+
+  <p>Once the changes made in a feature branch have been merged into the upstream there is no need to keep the feature branch around. Thus, the feature branch can be deleted from your local and origin repositories.  
+
+  <p>Delete the feature branch from your local and origin:
+  <OL>
+    <LI><code>git branch -d round1fix</code>
+    <LI><code>git branch</code>
+    <UL>
+      Verify that the round1fix branch is no longer in your local repo.
+    </UL>
+    <LI>Notice that the round1fix branch still exists in your origin on your GitHub.
+    <LI><code>git push origin :round1fix</code>
+    <UL>
+      Notice the ":" before round1fix!<br>
+      Reload your GitHub origin repository page in the browser and verify that the round1fix branch has been deleted.
+    </UL>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+</UL>
+
+<a name="Part3">
+<font size=+1 color='#006400'>
+<b>Part 3: Before the Second Class</b>
+</font>
+
+<p>Thus far, the changes you have made and integrated into the project have been carefully selected so that no change you made conflicted with a change made by someone else.  This meant that your feature branch was able to be merged into the upstream master automatically.  In practice however, it is quite likely that when multiple people are changing code concurrently they will make changes that are in conflict with each other. Complete the steps below before the next class.  These steps will have you make a change that will generate conflicts and we will then walk through the process of resolving those conflicts in the next class.
+
+<UL>
+  <p><u>Fix A Round2 Issue</u>
+  <OL>
+    <p>The steps below are the same steps you used in fixing your "Round1" bug and making a pull request.
+So, you can refer to the steps above or use the <a href="githubcheatsheet.html">git/GitHub Cheatsheet</a> to refresh your memory on the commands required.
+    <p>
+    <LI>Go to the GitHub <i>Issues</i> tab on the upstream repository and browse the "Round2" bugs.  Comment on one of the "Round2" tickets that you want to fix.  Refresh the page and check if you are the first commenter on the ticket. If you are, then the bug is yours.  If you are not the first commenter on the issue try another until you are!    
+    <LI><code>git branch round2fix</code>
+    <LI>Edit the code in your round2fix branch to address the issue that you have claimed.
+    <LI><code>git status</code>
+    <LI><code>git add Calculator.java</code>
+    <LI><code>git commit -m "<i>&lt;Descriptive commit message&gt;</i>"</code>
+    <LI><code>git push origin round2fix</code>
+    <LI>Make a pull request to the upstream for your feature branch. (Note: GitHub may tell you that it "Can't automatically merge" your pull request. That's expected, go ahead and create it anyway.)
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+</UL>
+
+
+<a name="Part4">
+<font size=+1 color='#006400'>
+<b>Part 4: Hands-On in the Second Class</b>
+</font>
+
+<p>Before this class you made changes that fixed a "Round2" issue and generated a pull request to the upstream to merge your results. In practice, while you are working on your fix other contributors will make pull requests and their work will be merged into the upstream.  To simulate this, the instructor has made changes to the upstream. These changes have been designed to conflict (i.e. have changes in the same line of code, or changes that cannot be merged automatically). You may have noticed when you created your pull request that GitHub indicated (in red) that it "Can't automatically merge" your pull request.  This is GitHub's way of letting you and the upstream project managers know that there is a conflict between the code in the upstream and the edits in your pull request.
+
+<p>When a branch cannot be merged automatically what is typically done is that the person issuing the pull request will be asked to <i>merge</i> the changes from the current upstream master into their feature branch. During this process you will have to resolve the conflicts that exist manually by deciding what the conflicting code should look like in each case. Once the conflicts are resolved, the pull request is updated by pushing your edited feature branch to your origin. The upstream manager will then be able to merge your updated pull request you issued into the upstream.
+
+<UL>
+  <p><u>Synchronize Local and Origin with Upstream master:</u>
+  <OL>
+    <LI><code>git checkout master</code><br>
+    <LI><code>git pull upstream master</code><br>
+    <LI><code>git push</code>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Merge master Branch Changes into your Feature Branch:</u>
+  <OL>
+    <LI><code>git checkout round2fix</code>.
+    <LI><code>git merge master</code>
+    <UL>
+      <p>Notice that the merge will fail due to conflicts. Git needs your help to manually resolve the conflicts. You can see the conflicts if you look inside the <code>Calculator.java</code> file.
+    </UL>
+  </OL>
+
+  <p><u>Examine the Conflicts</u>
+  <OL> 
+    <LI><code>cat Calculator.java</code>
+    <LI>Scroll to where you made your edits. You should see something similar to:
+    <UL>
+      <code><pre>
+<<<<<<< HEAD
+	public double sphereVolume(double r) {
+=======
+	public static double sphVol(double r) {
+>>>>>>> master
+      </pre></code>
+
+      <p>This is git's way of indicating what has happened. The master branch had been edited to make the <code>sphVol</code> method <code>static</code>.  But the local branch (HEAD) had been edited to rename the <code>sphVol</code> method to <code>sphereVolume</code>, as requested in the issue ticket. Because these changes are in the same line git is unable to automatically merge them.  You could resolve the conflict by manually editing the file and removing the information about the conflict leaving only the desired code. But it is often easier, more convenient and less error prone to use a graphical merge tool as you will below.
+    </UL>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Resolve the Conflicts:</u>
+
+  <OL>
+    <LI>Launch the graphical merge tool (Meld):
+    <UL>
+      <LI><code>git mergetool</code>
+      <UL>
+        <LI>The left pane (LOCAL) shows the code in your feature branch.  This includes the edits that you have included in your pull request.
+        <LI>The right pane (REMOTE) shows the code from the current master branch in your local repository. This is also the code as it exists in the upstream since you just synched.
+        <LI>The middle pane shows the file as it existed at the time your feature branch was created. Thus, it does not contain any of the changes to the master branch or any of the changes in your feature branch. This is also where you will indicate what the file should look like with all of the conflicts resolved.
+      <br><br>
+        <LI>Code highlighted in blue are changes in the master branch that do not conflict with changes in your feature branch. These need to be moved into your feature branch to bring it into synch with the master branch.
+        <LI>Code highlighted in red are changes in the master branch that conflict with changes in your feature branch. You will need to resolve these conflicts.
+      </UL>
+    </UL>
+    <LI>Use the arrow buttons to move the blue highlighted lines from the master branch into the center pane. This is you accepting the non-conflicting upstream changes into your feature branch.
+    <LI>Edit the code in the center panel to resolve the remaining conflict. (i.e. the method should have your new name and also be <code>static</code>).
+    <LI>Save the changes in the merge tool.  Note that when you save it is the code in the center pane that is saved.
+    <LI>Exit the mergetool.
+    <LI>Use <code>cat Calculator.java</code> and verify that the merged file now appears as desired.
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Commit and Push (Update Pull Request):</u>
+  <OL>
+    <LI><code>git status</code>
+    <LI><code>git commit -m "merged upstream changes"</code>
+    <LI><code>git push origin round2fix</code>
+    <UL>
+      <LI>Now check your pull request on GitHub.  It will have been updated to have your merged changes and will also indicate that it can now be automatically merged.
+    </UL>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+  <p><u>Synchronize Local and Origin master branches with Upstream master:</u>
+  <OL>
+    <LI><code>git checkout master</code>
+    <LI><code>git pull upstream master</code>
+    <LI><code>git push origin master</code> 
+  </OL>
+
+  <p><u>Delete the feature branch:</u>
+  <OL>
+    <LI><code>git branch -d round2fix</code>
+    <LI><code>git push origin :round2fix</code>
+    <br>
+  </OL>
+
+  <p><img src="stop.png"> <b>Checkpoint</b> <img src="stop.png">
+
+</UL>
+
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+<LI>http://foss2serve.org/index.php/Git:_GitHub_Issues_and_Pull_Requests
+<LI>http://foss2serve.org/index.php/Git:_GitHub_Workflow_Activity
+<LI>http://foss2serve.org/index.php/Git:_Working_Locally_from_the_Command_Line
+<LI>http://foss2serve.org/index.php/Git:_Working_with_Remotes_from_the_Command_Line
+<LI>http://foss2serve.org/index.php/Why_Use_Version_Control
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

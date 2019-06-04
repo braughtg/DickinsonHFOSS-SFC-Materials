@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Ubuntu Install</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Ubuntu Install</b>
+
+</font>
+</center>
+
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>For the first several weeks of the semester you will be completing tutorials, in-class exercises and homework assignments to help familiarize you with some of the types of tools and techniques that are commonly used in H/FOSS projects.  We, of course, can't cover them all. However, the experiences of learning new tools and techniques should translate well into learning others that you will inevitably need as you get into your selected H/FOSS project.
+
+<p>All of the tutorials, in-class exercises and homework assignments will use the Ubuntu Linux operating system.  In addition, because the vast majority of H/FOSS projects are created and run under Linux based operating systems, learning a bit about it will likely be useful. So the first task will be to get a Ubuntu up and running so that you can use it.
+
+<p><font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting you should read a bit about Ubuntu Linux and Virtual Box.  The following sites are good starting points:
+<UL>
+  <LI><a href="https://opensource.com/resources/what-is-linux">What is Linux?</a>
+  <LI><a href="http://www.ubuntu.com/about/about-ubuntu">The Ubuntu story</a>
+  <LI><a href="https://www.virtualbox.org/wiki/Virtualization">Virtual Box: Virtual Machines</a>
+</UL>
+
+<p><font size=+1 color='#006400'>
+<b>Getting Started</b>
+</font>
+
+<p>For this assignment you will work in pairs to install Ubuntu Linux in Virtual Box. While doing so you will keep a live-log in a Slack channel to document your time and effort on this assignment.  To get started:
+
+<UL>
+  <LI>One partner must create a new Slack channel:
+  <UL> 
+    <LI>The channel should be private.
+    <LI>The channel should be named using your initials and the assignment name (e.g. "gb-zz-ubuntu-install")
+    <LI>Invite your partner and me to join this channel.
+  </UL>
+</UL>
+
+<p>As you progress through the assignment, use this channel to live-log your activities. Enter questions you have, answers you find, where you found them, steps you've taken, mistakes you've made, how you've corrected them, etc.  The idea is for you to paint a picture for me and a record for you of what you've done. Because Slack is indexed and searchable, live-logs of your work can be a great time saver helping you to (re)find answers, reconstruct actions, and avoid repeating mistakes that you've made before. Live-logs will also provide a means for me to assess your time and effort investment on assignments (see the Syllabus). 
+
+<p>The #sample-live-log channel in our Slack team contains a small sample of what might go into a live-log.
+
+<p>I recommend that one partner control the computer on which the work is occurring while the other partner keeps the live-log on another computer.  I also recommend that you frequently switch roles so that both partners gain experience with the assignment and with live-logging.
+
+<p><font size=+1 color='#006400'>
+<b>Virtual Box</b>
+</font>
+
+<p><a href="https://www.virtualbox.org/wiki/VirtualBox">Virtual Box</a> is a "a general-purpose full virtualizer for x86 hardware." In other words, Virtual Box is a program that acts like it is a full machine.  It allows you to run a full "guest" operating system (OS) and associated software inside a window on a "host" computer (e.g. Linux (guest) in a window on a Mac (host)).  Some advantages of this arrangement include:
+<UL>
+  <LI>You can have administrative privileges on the guest OS without having them on the host OS (e.g. in a departmental lab). This is useful because many installations and configurations require admin privileges.
+  <LI>The guest OS can be started up, shut down and rebooted much more quickly than the host machine. This is useful because many installs and configuration changes require reboots.
+  <LI>You can take snapshots of the system state at any point and restore them at any point.  This is useful because it is not unusual to "muck up" the system when first learning about installation and configuration of systems. This is compounded by having admin privileges (as discussed above)! But, as long as you have a clean snapshot, you can easily go back and try again if (when!) something gets "mucked up".
+</UL> 
+
+<p>You have two options for using Virtual Box:
+<UL>
+  <LI>Lab Machines: Virtual Box is pre-installed on the lab computers and can be found in the "Applications" folder or via the Spotlight search tool.
+  <LI>Personal Machine: You may download and install Virtual Box on your own computer from the <a href="https://www.virtualbox.org/wiki/Downloads">Virtual Box Downloads</a> page.  There are versions for Windows, Mac and Linux.  Before you start down this road, please note that we are able to provide only minimal support for installation, maintenance and use of Virtual Box on non-lab machines.
+</UL>
+
+<p>Be sure you are able to launch Virtual Box (either on a lab machine, or your machine) before proceeding to the next section.
+
+<p><font size=+1 color='#006400'>
+<b>Ubuntu Linux</b>
+</font>
+
+<p><a href="http://www.ubuntu.com/">Ubuntu</a> is a popular <i>flavor</i> of the linux operating system and is what we'll use for the next several weeks.  Many of you may then find that it is also a good choice for working with your H/FOSS projects. Though, once you get a feel for Ubuntu, it is relatively easy to move to other flavors of linux if they are a better match to your project.
+
+<p><b>Tasks:</b>
+<OL>
+  <LI><a href="http://www.ubuntu.com/download/desktop">Download Ubuntu 18.04 Desktop</a>
+
+  <p>
+  <LI>Install Ubuntu 18.04 into a Virtual Box virtual machine.
+  <UL>
+    <p>But how? You ask. Google, I say! 
+    <p>I'd suggest something like the following:
+    <UL>
+      <LI>Search for "Ubuntu Virtual Box Install" and see what comes up.
+      <LI>You may need to browse through a number of pages to find something that matches reasonably close to what you are doing (i.e. right version numbers, host os, etc).  If there is an exact match for what you want to do and it looks doable - great.  If not, browse around until something looks pretty close and resonates with how you think and work.
+      <LI>Give it a go.  But remember, don't panic and don't be afraid to try things, you are working in a virtual machine, so if you muck it all up, just create a new one and try again!
+      <LI>When you get stuck or have questions... google some more, ask a peer, ask the professor.  Remember, getting stuck, confused and learning new stuff is all part of what's expected in this class. So don't hesitate to ask questions!!!
+    </UL>
+
+    <p>When doing the install some system specifications will need to be set. The following seem to work well.
+    <UL>
+      <LI>Allocate the virtual machine about half of the physical RAM (but no less than 4GB of RAM.)
+      <LI>Allocate a virtual disk at least 20GB of space.
+      <LI>Maximize the amount of video memory available to the virtual machine (128 MB).
+      <LI>Create whatever username and password you like - but you'll need to remember it!
+    </UL>
+  </UL>
+
+  <p>
+  <LI>Install the VirtualBox Guest Additions for Ubuntu.  These additions greatly improve the interaction between the host operating system (e.g. MacOS) and the guest operating system (e.g. Ubuntu). This includes better graphics performance, the ability to copy and paste into and out of the VM, and a host of other smaller features. Once you have this installed try to copy and paste from the guest to the host and vice versa to confirm that they are working (note: Will also require a small configuration adjustment).
+  <UL>
+    <p>But how? You ask. Google, I say!
+  </UL>
+
+  <p>
+  <LI>Once your machine is up and running and you can log in, create a snapshot of its current state in Virtual Box.
+  <UL>
+    <p>But how? You ask. Google, I say! (I'm sure you are getting the picture!)
+  </UL>
+
+  <p>
+  <LI>Open a text editor and type in your name and your partner's name and "COMP491 Fall &lt;YEAR&gt;". Then take a screen shot of the VirtualBox window and include it in your Live-log.
+</OL>
+
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>http://foss2serve.org/index.php/Installing_a_Virtual_Machine
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

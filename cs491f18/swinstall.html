@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Software Installation</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Software Installation</b>
+
+</font>
+</center>
+
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>Using, working with or contributing to a H/FOSS project will invariably require you to install some additional software on your computer.  There are three primary ways of accomplishing this on linux. There are graphical software managers, like the Ubuntu Software Center, that allow you to browse and install available software in a GUI. There are also tools, like APT, dkpg and yum, that install software from the command line. Finally, it is also possible to download, build and install software from its source code.  The exercises below will guide you through the process of installing some software onto Ubuntu using the graphical Software Manager and also the APT command line tool.  We'll build and install a program from source in another exercise later.
+
+<p>
+<font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting watch the video tutorial below, which will introduce you to the basic system administration tools for installing software on linux:
+<UL>
+  <LI><a href="https://www.youtube.com/watch?v=c_4XnaMvq7U">New Ubuntu User: How To Install Software In Ubuntu</a> using the Ubuntu Software Center.
+  <LI><a href="https://www.youtube.com/watch?v=8P-Vek7Vtgg">Linux Sysadmin Basics 05 -- Package Management with apt-get</a> from the command line.
+</UL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Exercises</b>
+</font>
+
+<p>Complete each of the following exercises:
+<OL>
+  <p><LI><b>Snapshotting</b>: Any time you are doing system configuration or installs, it is a good idea to take a snapshot. Often times an install will not work or you'll try several things before getting it to work.  This can leave unnecessary "residue" on the machine from all of the things that you've tried that didn't work. If you have a snapshot, you can roll back to the state before you started and do a clean install once you have it all figured out. Also, if something were to go horribly wrong, you can roll back to a known stable state. Make a snapshot of your current VM state in Virtual Box and give it a descriptive name. 
+
+  <p><LI><b>Software Manager</b>: APT, and similar tools (e.g. snap, yum, dnf, pkg) used by different linux flavors, provide powerful ways to install software from the command line. However, if you do not know exactly what you want to install, a graphical tool that allows you to browse the available software may be preferable. In Ubuntu, the Software Manager (the suitcase icon) is such a tool. Use the Ubuntu Software Manager to find and install gimp, a FOSS package for editing images. Run the gimp application to verify that it works.
+
+  <p><LI><b>Snapshot</b>: Make another snapshot of the system with gimp installed.
+
+  <p><LI><b>Confirm No Java</b>: By default Ubuntu does not come with Java installed. You can confirm this by typing <code>java</code> on the command line.  Note that when you do, Ubuntu will tell you that java is not installed and make some suggestions as to which packages you might install (using apt) to get it.  Those suggestions will install the OpenJDK and we will need to install the Oracle JDK instead.  So don't follow those suggestions, go onto the next step...
+
+  <p><LI><b>Oracle JDK Install</b>: Linux suggests installing the Open JDK. This is a good alternative to the Oracle JDK in a lot of cases. However, the Oracle JDK is still the gold standard and is preferred (or needed) by many applications. Figure out how to use apt from the command line to install the latest Oracle Java Developer Kit (JDK). Once you have installed it, use the command <code>java -version</code> to verify it. The output should include something similar to "Java(TM) SE Runtime Environment ... (build ...)", the exact build number will differ but should correspond to the latest JDK.  Also run <code>javac -version</code> to verify that the Java compiler is also present in addition to the runtime environment.
+
+  <p><LI><b>Snapshot</b>: Make another snapshot of the system now that you have Oracle Java installed.
+
+  <p><LI><b>Eclipse Install (take 1)</b>: The eclipse IDE is not installed in Ubuntu by default, but may be something useful to have. Type <code>eclipse</code> on the command line to verify that it is not installed. Note, that as with the <code>java</code> command above, Ubuntu is quite helpful here and tells you what package to install to get eclipse.  
+
+  <p>Use apt from the command line to install eclipse.
+
+  <p>Notice that when you run apt to install eclipse it lists a large number of other packages to install or upgrade. One of the great features of package managers such as apt is that they will not only install the package you ask it to, but also any other packages that it needs to run (i.e. on which it depends). So in this case, installing eclipse also installed a wide range of other packages on which eclipse depends, saving you a lot of work!
+
+  <p>Try to run eclipse from the command line. 
+
+  <p>You'll notice that it does not work! Apt attempted to install eclipse 3.8.1 which has an incompatibility with some of the installed libraries. This is something you will encounter fairly regularly in the Linux world. 
+
+  <p>Also run <code>java -version</code> again. You'll notice that apt switched the the default version from the Sun Java to the Open JDK that was installed as a dependency of eclipse.  You'll also need to be careful of things such as this when doing system administration tasks in linux.  We could attempt to fix this issue by doing installs of different libraries and dependencies and we may eventually get eclipse to run. But it turns out there is a newer version of eclipse that can be installed with the snap command which will function properly. 
+
+  <p><LI>Roll Back</b>: You could simply try the snap command to install eclipse, however it if works you will be left with all of the extra dependencies installed by the apt command.  So instead, we will roll back to the snapshot you created before trying to install eclipse and try again from that point.  
+
+  <p>Shut down your virtual machine and restore to the snapshot from before you attempted to install eclipse. Confirm that you have rolled back by trying to launch eclipse from the command line. You should again see the messages about using snap or apt to install eclipse.
+
+  <p><LI><b>Eclipse Install (take 2)</b> Use the snap command suggested by linux to install eclipse 4.8.0.  Confirm that snap did not modify the default java version.  Then run eclipse from the command line and lock it to the launcher.
+
+  <p><LI><b>Snapshot</b>: Make another snapshot of the system now that you have Eclipse installed.
+
+  <p><LI><b>git</b>: In order to interact with GitHub for things like retrieving code from, or contributing changes to an source project you will need to use the git command line tools. We won't be using these today, but we'll need them for our class on Version Control.  So we'll go ahead install them now.  Figure out how to use apt from the command line to install the git tools.  Run git from the command line to ensure that it has been installed. If it has been successfully installed you should see a help screen showing the "usage: " of git and a long list of the "common Git commands."
+
+  <p><LI><b>Snapshot</b>: Make another snapshot of the system now that you have git installed.
+
+  <p><LI><b>Meld</b>: When using git and GitHub for team development, situations will arise when two people have changed the same file in incompatible ways.  When this happens it will be necessary to merge the changes manually.  A good tool for displaying the changes and allowing you to choose which change to accept makes this job a lot easer.  Meld is just such a tool. 
+
+<p>Like git, we won't be using Meld today, but let's go ahead and install it so its ready when we need it.  Figure out how to install Meld.  Once you have it installed you can verify that it works by typing <code>meld</code> on the command line. If everything is good then the GUI tool should appear.
+
+  <p><LI><b>Snapshot</b>: Make another snapshot of the system now that you have Meld installed.
+</OL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

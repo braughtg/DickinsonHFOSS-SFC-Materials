@@ -1,0 +1,295 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Building a FOSS Project</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Building a FOSS Project</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>While some H/FOSS software is available as binary (executable) packages, much of it is available only in source code form, and requires that you build it yourself before you can run it.  Even when binary packages are available, if you are going to contribute to the project by modifying, extending or patch the code, you'll need to get the source code and be able to build the executables yourself.
+
+<p>The tutorial below will introduce you to the two most common build tools used H/FOSS projects, <code>configure</code> and <code>make</code>.  It will also walk you through the use of these tools in a small HelloWorld project. In this activity you will install a full-scale FOSS project that uses <code>configure</code> and <code>make</code>.  This will obviously require that you use <code>configure</code> and <code>make</code>, but will also require you to, as is quite typical, find and install some additional dependencies and deal with imperfect installation instructions.
+
+<p>
+<font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting work through the tutorial below. The Hello World example will introduce you to the use of the unix autotools and the <code>configure</code> and <code>make</code> tools:
+<UL>
+  <LI><a href="https://robots.thoughtbot.com/the-magic-behind-configure-make-make-install">The magic behind configure, make, make install</a> by George Brocklehurst. 
+</UL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Assignment</b>
+</font>
+
+<p>Your task is to download, configure, build and install <a href="http://www.freeciv.org/">Freeciv</a> - "a Free and Open Source empire-building strategy game inspired by the history of human civilization." You should do this in Ubuntu within VirtualBox.  Ideally, begin from the last snapshot you created during the <a href="http://users.dickinson.edu/~braught/courses/cs491f18/swinstall.html">Software Installation Activity</a>.
+
+<p>The following broad steps will help to guide you through the process.  However, at each step you may need to consult the project installation directions, install unmet dependencies, debug errors and Google to find additional information.
+
+<p><b>Download / Unpack</b>
+<UL>
+  <p>Rather than installing the latest version of Freeciv, we will be installing an older version.  By installing an older version we'll know where the complications arise and can ensure that the process clearly illustrates the configure/make process.  You should feel free to have a go at installing the newest version later if you are interested.
+
+  <OL>
+    <p><LI>Find the <code>freeciv-2.1.9.tar.bz2</code> file in the <code>Files</code> area of the <a href="https://sourceforge.net/projects/freeciv/">freeciv SourceForge site</a>. This was available as of this writing (Sept 2016).  
+<!--
+NOTE: It is also possible to obtain freeciv with back versions as tags from GitHub. But I did it this way to give them experience using a different approach for downloading and installing and to expose them to tar and bzip archives.
+
+If they clone the git repo then then can simply:
+ git checkout tags/R2_1_9
+to get the correct version. 
+
+Enters Detached head mode...
+
+Also a bunch of other stuff would probably need to change because the configure script does not exist in the GitHub version.
+
+-->
+
+    <p><LI>Download the file by right clicking the link and choosing "Save Lin<u>k</u> As..." Or if you just click the link, use the "<u>S</u>ave File" option.
+
+    <p><LI>Move the <code>freeciv-2.1.9.tar.bz2</code> file from your Downloads directory to your Documents directory.  Despite the convenience, it is generally poor form to use files or do work in the <code>Downloads</code> directory.
+
+    <p><LI>Unpack the <code>freeciv-2.1.9.tar.bz2</code> file to get the <code>freeciv-2.1.9</code> source directory.
+tar 
+    <br><i>Tips:</i>
+    <UL>
+      <LI>File with the extension <code>bz2</code> are compressed archive files.  You'll need to <u>decompress the bz2 file</u> to get the <code>freeciv-2.1.9.tar</code> file.
+      <LI>Files with the extension <code>tar</code> are tape archives. This is a bunch of files and directories packed into a single uncompressed file.  You'll need to <u>extract the tape archive</u> to get the <code>freciv-2.1.9</code> directory that contains the source code.
+    </UL>
+  </OL>
+</UL>
+
+<p><b>README and INSTALL</b>
+<UL>
+  <p>Most H/FOSS project will include <code>README</code> and <code>INSTALL</code> files in their source directory.  These files contain information about the product and how to build/install it. The important information necessary to build Freciv is contained the <code>INSTALL</code> file.
+
+  <OL>
+    <p><LI>Open (<code>gedit</code>) or display (<code>more</code>) the <code>INSTALL</code> file. 
+
+    <p><LI>There is a lot of detailed information in this file. If you want to customize the build, or run into problems with the build it may be essential to read it in detail.  Fortunately, the build process for many unix based H/FOSS projects is well standardized and you can usually skip over much of this information. 
+
+    <p><LI>For now just skim over the information to get a feel for what type of information is here. Stop when you reach section "2b. Generating the Makefile for the release versions:" and go onto the next section of this activity.
+  </OL>
+</UL>
+
+<p><b>Configure</b>
+<UL>
+<p>You learned a lot about configure scripts in the assigned tutorial.  They are used by many H/FOSS projects to detect machine particulars and to create the makefiles that are used to control the compilation of the source code into the executable(s). 
+
+  <OL>
+    <p><LI>List the contents of the <code>freeciv-2.1.9</code> directory and notice that it contains the <code>configure.ac</code> and <code>Makefile.am</code> files that get converted in to the <code>configure</code> script and the <code>Makefile.in</code> file by the autotools (<code>autoconf</code> and <code>automake</code>) that you learned about.
+
+    <p><LI>Also notice that this directory already contains the <code>configure</code> script and the <code>Makefile.in</code> file.  This is because autotools were run by the developers and the results were packaged in the tar file you downloaded - how convenient!  If they were not, the autotools could be used to generate them from the <code>configure.ac</code> and <code>Makefile.am</code> files.  In fact, the developers provide a shell script (<code>autogen.sh</code>) that does exactly that.
+
+    <p><LI>Run the <code>configure</code> script as described in section "2b. Generating the Makefile for release versions" of the <code>INSTALL</code> document.
+
+    <p><LI>Bummer... the <code>configure</code> script terminates with an error:
+    <UL>
+      <code>configure: error: no acceptable C compiler found in $PATH</code>
+    </UL>
+
+    <p><LI>Install the gcc compiler.
+
+    <p><LI>Bummer... the <code>configure</code> script terminates with an error:
+    <UL>
+      <code>configure: error: Could not find zlib library.</code>
+    </UL>
+
+    <p><LI>Install the zlib library.
+    <!-- zlib1g-dev -->
+    <br><i>Tips:</i>
+    <UL>
+      <LI>Don't try the first thing you find.  Search around until something seems reasonable...  In this case, the necessary library can be installed with <code>apt-get</code>, so search around until you find something that uses <code>apt-get</code>.
+      <LI>Many packages have two versions.  One that is used by the executables and one that is needed for development (i.e. when compiling from source).  The development package always has the same name as the base package with <code>-dev</code> appended.  The basic package should already be installed, so you'll just need to install the <code>-dev</code> package.
+    </UL>
+ 
+    <p><LI>Run the <code>configure</code> script again.
+
+    <p><LI>Bummer... the <code>configure</code> script terminates with an error:
+    <UL>
+      <code>configure: error: could not guess which client to compile</code>
+    </UL>
+
+    <p><LI>This problem is caused because another necessary library is not installed. Had we paid closer attention to all that information in <code>INSTALL</code> we may have caught it before now. But, truth be told, the more common approach is to just plow ahead and address issues as they arise, as we've been doing.
+  
+    <p><LI>Scroll back up through the output of the <code>configure</code> script to find the source of the problem.
+
+<!--
+    <UL>
+      <code>
+checking for pkg-config... no
+checking for GTK+ - version >= 2.4.0... no
+*** A new enough version of pkg-config was not found.
+*** See http://pkgconfig.sourceforge.net
+configure: WARNING: Not checking for SDL; use --enable-client=sdl to enable
+checking for X... no
+checking whether Xfuncproto was supplied... no
+checking for compilable FUNCPROTO definition... no, cannot determine
+checking for workable NARROWPROTO definition... no, cannot determine
+checking whether Xfuncproto was determined... no
+configure: WARNING: Not checking for XAW; use --enable-client=xaw to enable
+      </code>
+    </UL>
+-->
+
+    <p><LI>Install the necessary pkg-config and gtk packages.
+    <!-- pkg-config and libgtk2.0-dev -->
+
+    <p><LI>Run the <code>configure</code> script again.
+
+    <p><LI>Verify that the <code>freeciv-2.1.9</code> directory now contains a <code>Makefile</code>.
+
+    <p><LI>Let out a little whoop of joy!  Note that it is quite common to have to repeat the configure process a number of times before you have all of the necessary dependencies installed.
+  </OL>
+</UL>
+
+<p><b>Make</b>
+<UL>
+  <p>Once the project is configured and the <code>Makefile</code>s have been generated the executable programs must still be built.  The <code>make</code> command uses the information from the <code>Makefile</code>s to compile the source code into the executable programs.
+
+  <OL>
+    <p><LI>Compile Freeciv as described in section "3. Compiling Freeciv" of the <code>INSTALL</code> document.
+
+    <p><LI>Bummer... the make terminates with an error
+    <UL>
+      <code>
+        make[1]: Leaving directory '/home/comp491/Documents/freeciv-2.1.9'<br>
+        Makefile:517: recipe for target 'all' failed<br>
+        make: *** [all] Error 2
+      </code>
+    </UL>
+
+    <p><LI>If you scroll back up through the output of the <code>make</code> command you'll find that the source of the problem is an undefined reference to a symbol in the GLIC library that was discovered during while linking the compiled files:
+    <UL>
+      <code>
+        /usr/bin/ld: civclient.o: undefined reference to symbol 'pow@@GLIBC_2.2.5'<br>
+        //lib/x86_64-linux-gnu/libm.so.6: error adding symbols: DSO missing from command line<br>
+        collect2: error: ld returned 1 exit status<br>
+        ...
+      </code>
+    </UL>
+
+    <p><LI>Use Google to see if anyone has had and solved this issue before.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>Googling exact error messages is often very effective.
+      <LI>Place text in quotes ("blah blah") to search for exact matches.
+      <LI>Start with error messages that contain application specific information (e.g. "... civclient.o ...").
+      <LI>Return the favor! If you sometime figure out a solution to a problem, be a good FOSS citizen and post your solution.
+    </UL>
+
+    <p><LI>Use the information you find to fix the problem.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>You'll have to rerun <code>configure</code> with some additional flags.
+          <!-- ./configure LIBS="-lm -lz" -->
+      <LI>Then you'll have to run <code>make</code> again.
+    </UL>
+
+    <p><LI>List the files in the <code>freeciv-2.1.9</code> directory and confirm that two new executable files (<code>civ</code> and <code>ser</code>) have been created.
+
+  </OL> 
+</UL>
+
+<p><b>Install</b>
+<UL>
+  <p>It is possible to run the newly created executable programs directly from the <code>freeciv-2.1.9</code> directory. However, those files are only available to your user.  There are typically many users on a unix based system (e.g. consider the lab machines).  To make the executables available to all users they must be placed into a publicly accessible location.  On unix systems, this typically means copying them into the <code>/usr/bin</code> or <code>/usr/local/bin</code> directories.  Most <code>Makefile</code>s contain instructions for installing the program in an appropriate publicly accessible location.
+
+  <OL>
+    <p><LI>Install Freeciv as described in section "4. Installation" of the <code>INSTALL</code> document.
+
+    <p><LI>Bummer... <code>make install</code> terminates with an error
+
+    <p><LI>Examine the output of the <code>make install</code> command to determine the problem.
+
+    <p><LI>Reissue the <code>make install</code> command correctly.
+
+    <p><LI>Verify that Freeciv was installed by looking at the files in <code>/usr/local/bin</code>. Notice that the install process changed the names of the executables (<code>civclient</code> and <code>civserver</code>).
+  </OL>
+</UL>
+
+<p><b>Run</b>
+<UL>
+  <p>When executable programs are installed in a publicly accessible location they are easy for everyone to run from the command line.  When the location of the executable is also in the user's <code>PATH</code> environment variable, they simply type the name of the executable on the command line. The shell searches the directories in the <code>PATH</code> for the program and runs it if it is found.
+
+  <OL>
+    <LI>Verify that the <code>/usr/local/bin</code> directory is in your <code>PATH</code> environment variable.
+       <br><i>Tips:</i>
+    <UL>
+      <LI>The <code>env</code> command will list all of your environment variables.
+      <LI>Piping that output to <code>grep ^PATH</code> will show just your <code>PATH</code> variable.
+    </UL>
+
+    <p><LI>Run the Freeciv client program (<code>civclient</code>)
+
+    <p><LI>Don't play long, there's more work to be done and you can play later!
+  </OL>
+</UL>
+
+<p><b>Clean</b>
+<UL>
+  <p>You may have noticed earlier that the second time you ran make it went much faster than the first.  This is because many of the files had already been compiled, had not changed, and were not affected by the new configuration.  Sometimes however, you will want to rebuild the entire project from a fresh state.  Most <code>Makefile</code>s contain instructions for removing all of the files created by the build process.
+
+  <OL>
+    <p><LI>Run <code>make</code> again. Notice that it goes very quickly because there are no files that need to be compiled.
+
+    <p><LI>Look at the files in the <code>client</code> and <code>common</code> and <code>server</code> directories.  You will see lots of <code>.o</code> files.  These are the <code>.c</code> files compiled into object code, which are then linked together into the full executable.
+
+    <p><LI>Run <code>make clean</code>
+
+    <p><LI>Look again at the files in the <code>client</code> and <code>common</code> and <code>server</code> directories.  Notice that the <code>.o</code> files are now all gone.  Running <code>make</code> again would require that they all be compiled again, resulting the much longer process we experienced earlier.
+  </OL>
+</UL>
+
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>http://foss2serve.org/index.php/Test_Installation_Instructions
+  <LI>http://foss2serve.org/index.php/Building_a_GnomeMusic_Clone
+  <LI>http://foss2serve.org/index.php/Introduction_to_building_open_source_software
+  <LI>https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/ch-Building_the_Code.html
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

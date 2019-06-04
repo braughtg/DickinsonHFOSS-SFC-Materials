@@ -1,0 +1,321 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Getting Around in a FOSS Project</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Getting Around in a FOSS Project</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>H/FOSS projects can consist of hundreds of thousands of lines of code distributed across hundreds or even thousands of files stored in tens of directories. This kind of scale and structure can make it difficult to find the code that responsible for a particular behavior (e.g. error, bug, warning). This activity walks you through the process of finding, understanding and fixing a readability issue and a bug in the <a href="http://www.freeciv.org/">Freeciv</a> project that you built in the <a href="build.html">Building a FOSS Project</a> Activity.
+
+<p>One important theme in this activity is that it pays to fully understand an issue before making a change.  Rushing forward with changes based on a superficial understanding of the code is likely to introduce rather than fix bugs.  We'll look at two instances where there seems to be a perfectly reasonable change to be made, but by digging deeper it is discovered that one would have introduced a bug, and one where the first intuition ultimately turns out to be correct but also with deeper understanding leads to more readable code and also prevents a potential future bug.
+
+
+<p>
+<font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting it may be worthwhile to review the <code>find</code> and <code>grep</code> commands.  Our <a href="unixtools.html">Unix Tools Challenges</a> Activity and the sites below are good starting points:
+<UL>
+  <LI><a href="https://kb.iu.edu/d/admm">Unix find command</a> from Indiana University.
+  <LI><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unix2.html">UNIX Tutorial Two</a> from the University of Surrey.
+  <LI><a href="https://www.tecmint.com/12-practical-examples-of-linux-grep-command/">12 Practical Examples of Linux grep Command</a>
+</UL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Assignment</b>
+</font>
+
+<p>When building Freeciv, a number of compile warnings are reported. One reports an unused variable in <code>text.c</code> and the other questionable uses of the logical not operator in the <code>unittype.c</code> and <code>improvements.c</code>. This point of this assignment is to work through the process of understanding and fixing the underlying issues that cause these warnings. In doing so you will practice skills and techniques that are applicable to any type of work in a large code base.
+
+<p><b>Getting Started</b>
+<UL>
+  <p>Anytime you are going to make changes to a project it is important to keep a clean version of the project, without your changes. This greatly simplifies the process of integrating any changes back into the main project.  If we were working with Freeciv in a VCS, like Git or SVN, we would create a feature branch and work there (as we did in the <a href="github.html">Git/GitHub Workflow</a> Activity). In this case, both because we are not using a VCS and because it makes things easier to understand, we'll just make a copy of the project directory.
+
+  <OL>
+    <p><LI>Change into your <code>freeciv-2.1.9</code> directory (from the <a href="build.html">Building a FOSS Project</a> Activity.)
+
+    <p><LI>Use <code>make clean</code> to remove all compiled files from the project.
+
+    <p><LI>Change into the parent directory of your <code>freeciv-2.1.9</code> directory.  This is probably your <code>Documents</code> directory.
+
+    <p><LI>Copy the <code>freeciv-2.1.9</code> directory and all of its contents to a new directory <code>freeciv-2.1.9-mod</code>.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>The <code>-r</code> flag to <code>cp</code> recursively copies a directory and all of its contents.
+      <LI><code>cp -r <i>dir</i> <i>newDir</i></code>  
+    </UL>
+  </OL>
+</UL>
+
+<p><b>Compile Errors and Warnings</b>
+<UL>
+  <p>If a program contains syntax errors, the compiler will terminate with a compile error. This will cause the make process to terminate with an error as well. In addition to compile errors, the compiler also generates warnings that indicate statements in the program that may not have the intended effect (i.e. they point out potential common coding errors). These are warnings and not errors because the code is syntactically correct and may in fact be what the programmer intends.  But, as we'll see, at best a compiler warning usually indicates poorly written code and at worst will highlight a logical error.  It is quite common for H/FOSS projects to report lots of compiler warnings when they are built. And it is equally common for these warnings to be ignored - even when they shouldn't be.
+
+  <OL>
+    <p><LI>Run <code>make</code> in the <code>freeciv-2.1.9-mod</code> directory.
+
+    <p><LI>Scroll up until you see a few of the compiler warnings. Clearly, there is a very large amount of output from the make process, which makes it difficult to pick them out. Fortunately we know about the <code>grep</code> tool, and this is exactly the type of thing that it was created to help with!
+
+    <p><LI>Run <code>make clean</code>.
+
+    <p><LI>Run <code>make</code> again, but this time pipe the output through <code>grep</code> so that only lines with compile warnings (i.e. lines containing the string "warning:") are displayed.
+      <!-- make | grep "warning:" -->
+
+    <p><LI>Thats much nicer! Still a lot of warnings, but its now much easier to find them.
+  </OL>  
+</UL>
+
+<p><b>Finding the Responsible Code</b>
+<UL>
+  <p>The "grepped" output from make shows us the warning messages, the names of the files that contain them and indicates offending line numbers. That's great, but most significant H/FOSS projects have hundreds or thousands of files stored in tens of directories.  It could take quite a while to find the problematic files and lines if you are not already familiar with the project.  Fortunately, we already know about some tools (<code>find</code> and <code>grep</code>) that will be helpful.
+
+  <p>In this section we'll find and fix some code readability issues that are highlighted by the compile warnings.
+
+  <OL>
+    <p><LI>Consider the last compile warning reported:
+    <UL><pre>
+text.c: In function 'popup_info_text':
+text.c:145:14: warning: variable 'infra' set but not used [-Wunused-but-set-variable]
+   bv_special infra;
+              ^</pre></UL>
+
+    <p>We can see that the warning is in the file <code>text.c</code> and is in the <code>popup_info_text</code> method at column 15 of line 145. The warning tells us that the variable <code>infra</code> is declared here and somewhere later is set (i.e. assigned a value), but that its value is never actually used. This suggests that both the variable and the assignment are unnecessary.
+
+    <p>The <code>[-Wunused-but-set-variable]</code> indicates that warnings of this type can be turned off by passing the <code>-Wunused-but-set-variable</code> flag to the compiler. This is an easy-out that would make this type of compile warning go away, but that simply masks the problem, and is usually not the best solution!  Let's dig a little deeper.
+
+    <p><LI>Use the unix <code>find</code> command to determine the directory containing the <code>text.c</code> file.
+    <!-- find . -name "text.c" -print -->
+    <!-- ./client/text.c -->
+
+    <p><LI>Open the <code>text.c</code> file and find the definition of the <code>infra</code> variable and where it is assigned to.
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>gedit <i>filename</i></code> will open editor with the file.
+      <LI>gedit will display line numbers (click "Ln 1, Col 0" at bottom, check the "Display line numbers" box).
+      <LI>gedit Search menu has a "Go to Line...:" option.
+    </UL>
+
+    <p><LI>Find the line in <code>popup_info_text</code> where <code>infra</code> is assigned to.
+    <!-- 265 --> 
+
+    <p>You will see that <code>infra</code> is assigned the result of a function call.  This suggests that the result of that function is important and will be used. But we already know that the value assigned to <code>infra</code> isn't used. Confusing! Right?  
+
+    <p>At a minimum we can eliminate the variable and the assignment. But we could also, quite reasonably, think about eliminating the function call all together since the return value is unused. That could even lead to some nice performance improvement. But before we rush in, let's dig a little deeper. 
+
+    <p>We need to look at the function being called. But where is it defined?
+
+    <p><LI>Use <code>grep</code> to find the definition of the function.
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>grep -r -n "<i>string</i>"</code> - searches recursively (<code>-r</code>) in all subdirectories of the current directory and prints the names (<code>-n</code>) of the files that contain <code><i>string</i></code>.
+      <LI>Adding the <code>-I</code> flag to <code>grep</code> causes it to ignore binary files.
+      <LI>You can discard the calls to the method and keep the definition of the function by adding its return type to the <code><i>string</i></code> being searched for with <code>grep</code> (e.g. <code>"bv_special <i>method_name</i>"</code>)
+    </UL>
+    <!-- grep -r -n -I "get_tile_infrastructure_set" -->
+    <!-- grep -r -n -I "bv_special get_tile_infrastructure_set" -->
+
+    <p><LI>Modify your <code>grep</code> command to display the full definition of the function.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>Adding <code>-B <i>#</i> -A <i>#</i></code> flags to <code>grep</code> will display the specified number (<i>#</i>) of lines before (<code>-B</code>) and after (<code>-A</code>) the line where <code><i>string</i></code> is found.
+    </UL>
+    <!-- grep -B 3 -A 18 -r -n -I "bv_special get_tile_infrastructure_set" -->
+
+    <p>Notice that both parameters to the function are passed by reference. The first parameter is declared to be <code>const</code>, which ensures that its value cannot be modified.  The second parameter however, is not declared <code>const</code>, so its value, and because it was passed by reference, the value of the argument provided in the call can be changed by the method.  In other words, when called this function can have the side effect of modifying the value of its second argument (this happens on line 76).
+
+    <p>So we now know that the function has a side effect, and thus the call to it cannot be eliminated from <code>text.c</code>. In fact, doing so would likely have introduced a new bug into the program.  
+ 
+    <p>We can however, still eliminate the <code>infra</code> variable and the corresponding assignment.  This change will communicate more clearly that the function call is being made not for the return value, but because of its side effect.
+
+    <LI><p>Modify the <code>text.c</code> file by removing the <code>infra</code> variable and the assignment, leaving the function call.  This maintains the proper functionality and makes the code better express the intention.
+
+    <LI><p>Run <code>make</code>.  Notice that only the files in the <code>client</code> directory are compiled and that the compile warning is now gone.  
+
+    <LI><p>The same compile warning applies to a number of other files as well.  Fix at least one more.
+    <!-- servers.c, packhand.c, mapview_comon.c, etc... -->
+  </OL>
+</UL>
+
+<p><b>Fixing a Bug</b>
+<UL>
+  <p>Sometimes compiler warnings are innocuous, as in the previous section. The compile warning we addressed turned out to reflect a readability issue.  The code was more communicative about its purpose after the change, but the change did not alter the functionality of the program. Other times, compiler warnings can lead to the discovery of bugs.  We'll take a look at one of those in this section.
+
+  <OL>
+    <p><LI>Run <code>make clean</code>.
+
+    <p><LI>Run <code>make</code> piping the results through <code>grep</code> so that you only see the warning messages.
+ 
+    <p>Several among the first few warning messages include:
+    <UL><pre>
+improvement.c: In function 'can_player_build_improvement_direct':
+improvement.c:378:47: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+       (!get_player_bonus(p, EFT_ENABLE_SPACE) > 0
+                                               ^
+unittype.c: In function 'can_player_build_unit_direct':
+unittype.c:510:48: warning: logical not is only applied to the left hand side of comparison [-Wlogical-not-parentheses]
+       && !get_player_bonus(p, EFT_ENABLE_NUKE) > 0) {</pre></UL>
+
+    <p>This warning points out occurrences of a common mistake made by C programmers.  The logical not (<code>!</code>) operator has higher precedence than the comparison operators (<code>&lt; &gt; &lt;= &gt;= ==</code>).  Thus, in the statements above, the result of the call to the function <code>get_player_bonus</code> is negated before the comparison (<code>&gt; 0</code>) is performed.
+
+    <p>If you are not a well versed C programmer, that should give you a moment of pause... The result of a logical not operation will be true or false. How can true or false be &gt; 0?  The answer is peculiar to the C language.  In C, boolean values are represented as integers with <u>zero being false</u> and <u>any non-zero value being true</u>.  So for example, !5 > 0 has the value false (5 is a true value, !5 is a false value (i.e. 0) and 0 > 0 is false). Similarly, !-5 > 0 would also be false.  Conversely, !0 > 0 would be true (0 is false so !0 is true, anytime C generates a true value in an expression it uses 1, and 1 > 0 is true).
+
+    <p>Ok, so they probably just meant <code>!(get_player_bonus(...) > 0)</code> or the more readable <code>get_player_bonus(...) <= 0)</code>. Let's just make the change, submit the fix to the project, and get on with other stuff.  But wait a second... Considering that if last time we had gone with our initial thought we would have introduced a bug, maybe we should dig a little deeper.
+
+    <p><LI>Use the unix <code>find</code> command to locate the <code>unittype.c</code> file.
+
+    <p><LI>Open the <code>unittype.c</code> file in an editor (e.g. <code>gedit</code>) and find the code that generated the compile warning.
+
+    <p>The offending code is part of the <code>can_player_build_unit_direct</code> function. This function returns <code>TRUE</code> (a constant defined to be 1) or <code>FALSE</code> (an constant defined to be 0), indicating whether or not the player may build a particular type of unit in the game. More specifically, the statement (shown below) <u>seems to be saying</u> that if a unit is nuclear (<code>utype_has_flag(punittype, F_NUCLEAR)</code> and the player's <code>EFT_ENABLE_NUKE</code> bonus is not greater than 0, then he/she cannot build the feature (i.e. return <code>FALSE</code>).  
+    <UL><pre>
+  if (utype_has_flag(punittype, F_NUCLEAR)
+      && !get_player_bonus(p, EFT_ENABLE_NUKE) > 0) {
+    return FALSE;
+  }</pre></UL>
+
+    <p><LI>But we need to consider the meaning of <code>!get_player_bonus(p, EFT_ENABLE_NUKE) > 0</code> more carefully to see what this statement is <u>really saying</u>.
+
+    <p><LI>Complete the truth table below assuming <code>x</code> is of type <code>int</code>.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>Use the C definitions of logical true (anything but 0) and false (0).
+      <LI>Keep in mind that <code>!</code> has higher precedence than <code>&gt;</code>.
+    </UL>   
+
+<UL><pre>
+x = get_player_bonus(...);
+
+x    !x   !x > 0    !(x > 0)   x <= 0
+-------------------------------------
+0    1
+>0   
+<0 </pre></UL>
+
+    <p>From the above truth table you can see that what the code is actually saying is different than what we imagine it should be saying.  In particular, this bit of the <code>can_player_build_unit_direct</code> function will only return <code>FALSE</code> if the <code>get_player_bonus</code> is 0.  This leaves open the possibility that a player with a negative bonus will be able to build the nuclear unit.
+
+    <p>Super! Done! Change it to <code>(get_player_bonus(p, EFT_ENABLE_NUKE) <= 0)</code>, and off we go... Well... maybe not just yet. Maybe player bonuses can be negative and a player with any non-zero bonus should be able to build the nuclear unit. Let's dig a little deeper and see if there is any evidence in the code that might help clear this up.
+
+    <p>In C, there is an <code>unsigned</code> modifier for numeric data types. For example, an <code>unsigned int</code> can only hold non-negative values. This is an effective mechanism for enforcing constraints such as disallowing negative player bonuses.  Perhaps this has been used.
+
+    <p><LI>Find the definition of the <code>get_player_bonus</code> function to see if its return type can hold negative values.
+
+    <p><LI>It turns out that <code>get_player_bonus</code> calls another function and returns its result.  Find the definition of that function and check if its return type can hold negative values.
+
+    <p>It turns out that this function sums up a number of values and returns that sum as the bonus (<code>bonus += peffect->value;</code>).  So even though the function return types we found can hold negative values, we now still need to determine if the summed <code>value</code>s can be negative.  To do that we'll need to determine the data type of <code>value</code> and to do that we'll need to figure out the datatype of <code>peffect</code>.
+
+    <p><LI>The <code>peffect</code> variable is a pointer to a <code>struct</code> (sort of like a reference to an object in Java).  Find the name of the type of <code>struct</code> that <code>peffect</code> points to.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>Look for a method that <code>peffect</code> is passed into.
+      <LI>Find that method.
+      <LI>Check the type of the parameter corresponding to <code>peffect</code>.
+    </UL>
+ 
+    <p><LI>Find the definition for the type of <code>struct</code> that <code>peffect</code> points to and determine the data type of the <code>value</code> field.
+    <br><i>Tips:</i>
+    <UL>
+      <LI>The definition of a <code>struct</code> begins with <code>struct <i>name</i></code>.
+      <LI>Use <code>grep</code>
+    </UL>
+
+    <p>Whew... we've reached the bottom and its <code>int</code>s all the way down. So there is nothing obvious in the code that would enforce player bonuses always being non-negative. But where do the actual values come from? And can they be negative?
+
+    <p>If you were to keep digging, (a I did, so you don't have to) eventually you would determine that the values for the effects are stored in data files (<code>data/civ1/effects.ruleset</code> and <code>data/civ2/effects.ruleset</code>).  Looking in those files shows that some of the effect values are in fact negative.
+
+    <p>This would be a really good time to ask a question of the developer community. You've made a good attempt to understand the issue and have enough information to pose a good question that is likely to receive a good response. Since we are working from an old version of Freeciv, we won't actually ask the question. But if you were working on the current development you might write something like:
+
+    <UL>
+      <table border=1 width=75%><tr><td>
+      <p>I was investigating the source of some of the compiler warnings that appear during the make process. In particular, I was looking at these two:
+
+      <UL><pre>
+improvement.c: In function 'can_player_build_improvement_direct':
+improvement.c:378:47: warning: logical not is only applied to the left...
+       (!get_player_bonus(p, EFT_ENABLE_SPACE) > 0
+                                               ^
+unittype.c: In function 'can_player_build_unit_direct':
+unittype.c:510:48: warning: logical not is only applied to the left...
+       && !get_player_bonus(p, EFT_ENABLE_NUKE) > 0) {</pre></UL>
+
+      <p>As written (<code>!get_player_bonus(...) > 0</code>) these conditions only prevent building if the player has a 0 bonus. From looking at the effects.ruleset files it appears that effect values can be negative.  Thus, at least in theory a player bonus could become negative, because it is the sum of the effects, and the player would still be allowed to build.  
+ 
+      <p>Should a player with a negative bonus be allowed to build?
+
+      <p>If not, I propose the conditions should be rewritten as <code>get_player_bonus(...) <= 0</code>, which will ensure that the player cannot build with a negative bonus.
+      
+      <p>Can anyone think of any reason these conditions shouldn't be changed?
+      </td></tr></table>
+    </UL>
+
+    <p>Interestingly, there was a <a href="https://mail.gna.org/public/freeciv-commits/2015-04/msg00174.html">commit that made our proposed fix</a>. Notice that this patch wasn't made until 2015, so this bug hung around for quite a while and was only resolved because someone was fixing compile warnings.  But also notice, that it is not clear from the commit message (<code>Cleaned out extra "not" from comparisons of boolean effect values</code>) that the author of the patch realized that the change was modifying the behavior of the program.
+
+    <p><LI>Make our proposed fix in the <code>improvement.c</code> and <code>unittype.c</code> files.
+
+    <p>If you were to go digging around some more in the code you will find quite a number of instances of where <code>get_player_bonus</code) is used in logical operations that will evaluate to true (<code>1</code>) if it returns a negative value.  For example:
+    <UL><pre>
+if (get_player_bonus(pplayer, EFT_NO_DIPLOMACY)
+    || get_player_bonus(pother, EFT_NO_DIPLOMACY)) {</pre></UL>
+
+    <p>Or:
+    <UL><pre>
+if (get_player_bonus(pplayer1, EFT_NO_DIPLOMACY) == 0
+    && get_player_bonus(pplayer2, EFT_NO_DIPLOMACY) == 0) {</pre></ul>
+
+    <p>And additional places where it is explicitly checked for being positive:
+    <UL><pre>
+if (get_player_bonus(pplayer, EFT_REVEAL_CITIES) > 0) {</pre></ul>
+
+    <p>While we are not going to do it, developing a consistent handling of player bonus values as signed integer values, and applying it across the code base, would enhance the future readability and maintainability of the project.
+
+    <p><LI>Be sure to keep your <code>freeciv-2.1.9-mod</code> (with your changes) and <code>freeciv-2.1.9</code> directories.  You'll be using them again in the next activity.
+  </OL>
+</UL>
+
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/ch-Fixing_the_Code.html
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

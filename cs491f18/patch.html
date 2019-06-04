@@ -1,0 +1,186 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Patching a FOSS Project</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Patching a FOSS Project</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>In our <a href="github.html">Git/GitHub Workflow</a> Activity we saw pull requests as one mechanism by which contributions from the community can be integrated into a project. The diff and patch tools provide another mechanism that many H/FOSS projects use to accept community contributions.  For example, <a href="http://freeciv.wikia.com/wiki/How_to_Contribute">Freeciv has a patch process for accepting contributions</a>. 
+
+<p>This activity will give you some experience with diff and patch using a the modifications that you made to <a href="http://www.freeciv.org/">Freeciv</a> in the <a href="gettingaround.html">Getting Around in a FOSS Project</a> Activity.
+
+<p>
+<font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting work through the tutorial below. The Hello World example will introduce you to the use of the unix <code>diff</code> and <code>patch</code> tools:
+<UL>
+  <LI><a href="http://www.cyberciti.biz/faq/appy-patch-file-using-patch-command/">HowTo Apply a Patch File To My Linux / UNIX Source Code</a> by Vivek Gite. 
+</UL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Assignment</b>
+</font>
+
+<p>In this assignment you will practice creating and applying patches.  In particular you will create a single file patch for the changes you made to the <code>text.c</code> file in Freeciv and then apply that patch to a clean copy of the project.  You will then create a patch that captures all of the changes you made to the full source tree and apply that patch to a clean copy of the project.
+
+<p><b>Getting Started</b>
+<UL>
+  <p>Run <code>make clean</code> in the <code>freeciv-2.1.9</code> directory.
+
+  <p>Make two additional copies of the clean unmodified <code>freeciv-2.1.9</code> directory.
+  <UL><code>
+    cp -r freeciv-2.1.9 freeciv-2.1.9-one<br>
+    cp -r freeciv-2.1.9 freeciv-2.1.9-two
+  </UL></code>
+
+  <p>You'll use these clean copies to test applying the patches that you create.
+</UL>
+
+<p><b>Making a Single-File Patch</b>
+<UL>
+  <p>If the changes you make are isolated to a single file it is often easiest to make a patch file for just that single file.
+
+  <OL>
+    <LI>Create a patch file for the changes that you made to the <code>text.c</code> file.
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>diff -u <i>orig-file</i> <i>mod-file</i> &gt; <i>patch-file</i></code>
+      <LI>Create the patch from within the directory containing the modified <code>text.c</code> file.
+      <LI>Use a relative path to the unmodified <code>text.c</code> file.
+      <LI>Redirect the patch output to a file in the parent of the <code>freeciv-2.1.9-mod</code> directory.
+    </UL>
+    <!-- cd freeciv-2.1.9-mod/client -->
+    <!-- diff -u text.c ../../freeciv-2.1.9/client/text.c > ~/Documents/text.c.patch -->
+    
+    <p><LI>Look at the contents of the patch file and confirm that they agree with the changes that you made to <code>text.c</code>.
+  </OL>
+</UL>
+
+<p><b>Applying a Single-File Patch</b>
+<UL>
+  <p>Before submitting a patch you should always test that everything goes ok when it is applied.  We'll use the <code>freeciv-2.1.9-one</code> directory test the application of the patch you created.
+
+  <OL>
+    <p><LI>Change to the <code>freeciv-2.1.9-one/client</code> directory.
+
+    <p><LI>Look at <code>text.c</code> and verify that it is the original unmodified version.
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>cat text.c | grep "infra"</code>
+    </UL>
+
+    <p><LI>Apply the patch to <code>text.c</code>
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>patch &lt; <i>patch-file</i></code>
+      <LI>Use a relative path to the patch-file you created above.
+    </UL>
+    <!-- patch < ../../text.c.patch -->
+
+    <p><LI>Look at <code>text.c</code> and verify that the patch has been applied (i.e. that it now contains your changes).
+
+    <p><LI>Run <code>make</code> and ensure that the project is built (e.g. check the date stamp on the executables (<code>ls -l</code>). In practice you would now run any automated tests and also try the program to ensure that the changes you made are functioning properly. After that, you would submit the patch to the project.
+
+    <p><LI>Can you think of any advantages of using a single-file patch rather than just sending your modified file to the project manager?
+  </OL>
+</UL>
+
+<p><b>Making a Project Patch</b>
+<UL>
+  <p>If you have made changes across a number of files in a number of directories within the project, creating one patch file that captures all of your changes is more convenient than creating many single-file patches.
+  <OL>
+    <p><LI>Change to the parent of the <code>freeciv-2.1.9-mod</code> directory.
+
+    <p><LI>Create a patch for all of the changes that you made in <code>freeciv-2.1.9-mod</code>
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>diff -u -r -X<i>diff-ignore-file</i> <i>orig-dir</i> <i>mod-dir</i> &gt; <i>patch-file</i></code>
+      <LI>Full project patches should generally be made from the parent directory of the modified source. This keeps the relative paths short and, as we'll see later, makes it relatively easy for the project managers to apply the patch.
+      <LI>The <code>freeciv-2.1.9-mod</code> dir contains a <code>diff_ignore</code> file that specifies files (e.g. <code>.o</code> files, executables, etc) that the project managers do not want included in patches.
+    </UL>
+    <!-- diff -ur -Xfreeciv-2.1.9-mod/diff_ignore freeciv-2.1.9 freeciv-2.1.9-mod > full-proj.patch -->
+
+    <p><LI>Look at the contents of the patch file and confirm that they agree with the changes that you made.  Notice that the paths to all of the changed files begin with <code>freeciv-2.1.9-mod</code>. Of course the project managers will not have this path in their projects. We'll see how they deal with that soon.
+  </OL> 
+</UL>
+
+<p><b>Applying a Project Patch</b>
+<UL>
+  <p>Like with the single-file patch, it is always a good idea to apply your patch to a clean copy of the project to be sure everything works. Note that this is also similar to what a project manager would do when they receive your patch.
+
+  <OL>
+    <p><LI>Change to the <code>freeciv-2.1.9-two</code> directory.
+
+    <p><LI>Check a few of the files in the sub-directories of <code>freeciv-2.1.9-two</code> to verify that they are the originals and do not contain your changes.
+
+    <p><LI>Apply the patch.
+
+    <br><i>Tips:</i>
+    <UL>
+      <LI><code>patch -p <i>#</i> &lt; <i>patch-file</i></code>
+      <LI>Use a relative path to the patch-file you created above.
+      <LI>Replace <i>#</i> with the number of prefix directories in the paths of the patch file that should be ignored. One in this case. This is how we tell patch to ignore the <code>freeciv-2.1.9-mod</code> directory and just use what follows (e.g. <code>client</code>, <code>common</code>, etc.). So in this case use <code>-p 1</code>.
+    </UL>
+    <!-- patch -p1 < ../test.patch -->
+
+    <p><LI>Check a few of the files in the sub-directories of <code>freeciv-2.1.9-two</code> to verify that they now contain your changes.
+
+    <p><LI>Run <code>make</code> in the <code>freeciv-2.1.9-two</code> directory and ensure that the project is built.
+  </OL>
+</UL>
+
+<p><b>Patches in a VCS</b>
+<UL>
+  <p>Many VCSs provide a mechanism for performing diffs and creating patch files between branches or repositories. For example, git provides <code>git diff</code> and <code>git apply</code> for creating and applying patch files.  Svn provides the <code>svn diff</code> command that produces files that are compatible with the standard unix <code>patch</code> command.  Those tools are beyond the scope of this activity, but keep them in mind if the H/FOSS project you work on accepts contributions in the form of patches.
+</UL>
+
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>https://quaid.fedorapeople.org/TOS/Practical_Open_Source_Software_Exploration/html/ch-Fixing_the_Code.html
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

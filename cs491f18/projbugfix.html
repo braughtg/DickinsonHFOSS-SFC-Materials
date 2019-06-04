@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Selected Project Bug Fix</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Selected Project Bug Fix Activity</b>
+
+</font>
+</center>
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>In the <a href="projbuggardening.html">Bug Gardening Activity</a> you became more familiar with your product and project by investigating issues that appeared in the issue tracker.  In this activity you will attempt to fix a bug that appears in the issue tracker.
+
+<p>Many larger well-organized H/FOSS projects will have a collection of bugs/issues that have been tagged as "beginner", "introductory", "easy", etc.  The developers have identified these as issues that have, in their opinion, a reasonably low barrier to entry and make good places to start. If your project does not have such a list you should search the issue tracker and find a bug that is well specified and seems approachable.  If there is an appropriate communication channel for your project, you might also consider asking the community if they have any suggestions for bugs that might be good for a newcomer to the project. However you identify bugs to work on, be sure to inform the community via the appropriate mechanism that you are working on the bug.  If you ultimately fix the bug, or abandon work on it, be sure to also inform the community via the appropriate mechanisms.
+
+<p>
+<font size=+1 color='#006400'>
+<b>Assignment</b>
+</font>
+
+<p>For this activity each sub-group will identify at least one active bug in the issue tracker and attempt to fix it. Sub-teams are expected to work on this part of the activity for a minimum of two weeks. Work on this activity may require side tracks to learn more about the project, to complete additional tutorials, to discuss the issue with the community, etc. If a bug is identified and fixed in less than two weeks time, sub-teams should select additional bugs to work on.
+
+<p>Track and document what you do using your sub-team's Slack live-log. Each sub-team is expected to invest an appropriate amount of time and effort on the activities each week (7-10 hours/week). In addition the time and effort are to be spread across the week in multiple working sessions. Work on the activities will be assessed via the Project Checkpoints as described in the <a href="syllabus.html">Course Syllabus</a>. When your sub-team believes it has satisfied the <a href="#compcrit">Completion Criteria</a>, schedule an appointment with the course faculty for review.
+
+<p>All of the bugs that the team has attempted to fix must be collected together and documented under the heading "Attempted Bug Fixes" on your team's <i>Bug Activities</i> Wiki page.  This section of the Wiki page should include a table with one row for each attempted bug. The information in this table should be brief, full details are of course contained in your Slack live-logs. The table below shows the required columns and a few sample rows:
+
+  <center>
+  <table border=1>
+    <tr>
+      <th>Bug ID</th>
+      <th>Sub-Team</th>
+      <th>Description</th>
+      <th>Confirmed</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td><i>The identifier for the bug as a link into the issue tracker</i></td>
+      <td><i>Initials of sub-team members</i></td>
+      <td><i>A short description of the bug</i></td>
+      <td><i>Yes/No/Unknown - does the bug exist in the current development version.</i></td>
+      <td><i>Description of any action taken on the bug. Include links to any artifacts that document your actions.</i></td>
+    </tr>
+    <tr>
+      <td><a href="http://example.com/bug7890.html">7890</a></td>
+      <td>GB/XY</td>
+      <td>Withdraw field allows zero amount.</td>
+      <td>No.</td>
+      <td>Appears to have already been fixed. Commented on <a href="http://example.com/bug7890.html#comments">the ticket</a> suggesting it be closed.</td>
+    </tr>
+    <tr>
+      <td><a href="http://example.com/bugAB392c.html">AB392c</a></td>
+      <td>GB/XY</td>
+      <td>Program crashes on dates before 1970.</td>
+      <td>Yes</td>
+      <td>Claimed in issue tracker. Abandoned and released in issue tracker. After a few hours, this appears to be too complex for our current level of familiarity.</td>
+    </tr>
+    <tr>
+      <td><a href="http://example.com/bugX5432b.html">X5432b</a></td>
+      <td>GB/XY</td>
+      <td>UI unresponsive when sorting data.</td>
+      <td>Yes</td>
+      <td>Assigned to self in issue tracker. Recoded using Quicksort instead of Bubble Sort.  Issued a <a href=""http://example.com/bugX5432b.html#pullreq">pull request</a>. Pull request was merged!</td>
+    </tr>
+  </table>
+  </center>
+
+  <p>It is important to document all of the bugs that you attempt to work on, regardless of the outcome. This will ensure that all sub-teams can learn from each other and do not duplicate work.
+</UL>
+
+<p>
+<a name="compcrit">
+<font size=+1 color='#006400'>
+<b>Completion Criteria</b>
+</font>
+
+<p>The completion criteria that each sub-team must demonstrate for this activity are:
+
+  <UL>
+    <LI>The team's <i>Bug Activities</i> wiki page must be updated to include the following sections and information:
+    <UL>
+      <LI><b>Attempted Bug Fixes</b>: The table of information about the bugs that the team attempted to fix as described above.  Links in this table that qualify as Interactions or Contributions should also be linked in the sub-sections below. Yes, this is repeated information, but the separate organization is helpful to your instructor.
+      <LI><b>Interactions</b>: Add to the annotated list, with links if possible, any <i>interactions</i> that your team or sub-team had with the community during this activity (e.g. message board posts, mailing list messages, comments in the issue tracker, etc.). Please indicate the date of the interaction and the sub-team that had the interaction. Note: Interactions are not required for this activity. However if they occur, please link them here for reference.
+      <LI><b>Contributions</b>: Add to the annotated list, with links if possible, any <i>contributions</i> that your team or sub-team made to the project during this activity (e.g. corrections/clarifications/additions to documentation, closed issues, merged pull requests, etc.). Please indicate the date of the contribution and the sub-team that made the contribution. Note: Contributions are not required for this activity. However if you discover interesting information about a bug or fix the bug, you are highly encouraged to contribute what you find back to the community. Further, any accepted bug fix will guarantee an automatic exceptional (3) rating in the Effectiveness category on the Project Checkpoint rubric.
+    </UL>
+    <LI>Each team member must be able to:
+    <UL>
+      <LI>Participate competently in a discussion of bug fixes that were attempted.
+      <LI>Show and competently discuss the issue ticket for the bug that was fixed.
+      <LI>Walk through a demonstration of the bug before the fix was completed (use git to checkout an older commit or use snapshots).
+      <LI>Competently discuss what was done to fix the bug and test that it was fixed. This will include showing the modifications made to the code.
+      <LI>Demonstrate how it is known that the bug was fixed including running the product and the test suite(s).
+      <LI>Show the steps that have been taken to contribute the bug fix back to the community.
+    </UL>
+</UL>
+
+<p>
+<hr>
+<p>Acknowledgements: This assignment builds from and adapts ideas and content from the following activities created by others:
+<UL>
+  <LI>http://foss2serve.org/index.php/Bug_Gardening
+  <LI>http://foss2serve.org/index.php/Bug_Selection
+  <LI>http://foss2serve.org/index.php/Research_Bug_Activity
+  <LI>http://foss2serve.org/index.php/Solving_A_Bug
+  <LI>http://foss2serve.org/index.php/Writing_a_bug_report
+</UL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

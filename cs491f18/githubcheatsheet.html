@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - GitHub Cheatsheet</Title>
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Git/GitHub Command Cheat Sheet</b>
+
+</font>
+</center>
+
+<DL>
+  <DT><b>Initial Git Configuration:</b>
+  <DD><code>
+    git config --global user.name <i>&lt;GitHubUserName&gt;</i><br>
+    git config --global user.email <i>&lt;you@email.org&gt;</i><br>
+    git config --global push.default simple<br>
+    git config --global merge.tool meld<br>
+    git config --global mergetool.keepBackup false<br>
+    git config --global credential.helper cache
+  </code></DD>
+
+  <p><DT><b>Fork the Upstream Repository:</b>
+  <DD>
+    1. Log into your GitHub account<br>
+    2. Go to the repository for the project in GitHub<br>
+    3. Click on the "Fork" button in the upper right hand corner.
+  </OL></DD>
+
+  <p>
+  <DT><b>Clone Origin Repository to Local Machine:</b>
+  <DD>
+    1. From the GitHub repository click the green "Clone or Downlaod" button.<br>
+    2. Make sure that the URL shown has your GitHub user name in it.<br>
+    3. Click the little clipboard icon to copy your Origin Repository URL.<br>
+    4. On your machine: <code>git clone <i>&lt;Origin Repository URL&gt;</i></code>
+  </DD>
+ 
+  <p>
+  <DT><b>Add Upstream Repository as new Remote:</b>
+  <DD><code>
+    git remote add upstream <i>&lt;Upstream Repo URL&gt;</i><br>
+    git remote -v
+  </code></DD>
+
+  <p>
+  <DT><b>Listing Branches and Creating a Feature Branch:</b>
+  <DD><code>
+    git branch<br>
+    git branch <i>&lt;newBranchName&gt;</i><br>
+    git checkout <i>&lt;newBranchName&gt;</i>
+  </code></DD>
+
+  <p>
+  <DT><b>Status, Add, Commit:</b>
+  <DD><code>
+    git status<br>
+    git add <i>&lt;FileToAdd&gt; [<i>&lt;AnotherFileToAdd&gt; ...]</i><br>
+    git commit -m "a descriptive message here."</i>
+  </code></DD>
+
+  <p>
+  <DT><b>Display the Commit Log:</b>
+  <DD><code>
+    git log
+    </code>
+    <p>return - advance one line<br>
+        space - advance one screen<br>
+        q - terminate log listing 
+  </DD>
+
+  <p>
+  <DT><b>Push a Feature Branch to Origin:</b>
+  <DD><code>
+    git push origin <i>&lt;branchName&gt;</i>
+  </code></DD>
+
+  <p>
+  <DT><b>Making a Pull Request:</b>
+  <DD>
+    1. Open your github-issues-activty repository on GitHub.<br>
+    2. Click the "New pull request" button.<br>
+    3. Check that the "base fork" is set to the master branch of the upstream.<br>
+    4. Set the "head fork" to the branch in your origin with your changes.<br>
+    5. Verify that the pull request contains the changes that you have made.<br>
+    6. Click the green "Create pull request" button.<br>
+    7. Edit the title and the "Leave a comment" box (use "Fixes #<i>&lt;bugid&gt;</i>")<br>
+    8. Click the green "Create pull request" button.
+  </DD>
+
+  <p>
+  <DT><b>Synchronize Local and Origin master branches with Upstream master:</b>
+  <DD><code>
+    git checkout master<br>
+    git pull upstream master<br>
+    git push
+  </code></DD>
+
+  <p>
+  <DT><b>Delete a Feature Branch:</b>
+  <DD><code>
+    git branch -d <i>&lt;BranchName&gt;</i><br>
+    git push origin :<i>&lt;BranchName&gt;</i>
+  </code></DD>
+
+  <p>
+  <DT><b>Resolve Conflicts:</b>
+  <DD><code>
+    git checkout master<br>
+    git pull upstream master<br>
+    git checkout <i>&lt;BranchName&gt;</i><br>
+    git merge master<br>
+    git mergetool<br>
+    git status<br>
+    git commit -m "&lt;descriptive message&gt;"<br>
+    git push origin :<i>&lt;BranchName&gt;</i>
+  </code></DD>
+
+  <p>
+  <DT><b>Force master to match Upstream:</b>
+  <DD><code>
+    git checkout master<br>
+    git fetch upstream master<br>
+    git reset --hard upstream/master<br>
+    git push origin master --force
+  </code></DD>
+
+  <p>
+  <DT><b>Undo all uncommitted changes to a file:</b>
+  <DD><code>
+    git checkout -- <i>&lt;bad filename&gt;</i>
+  </code></DD>
+
+
+<!--
+OTHERS:
+ - https://blog.github.com/2015-06-08-how-to-undo-almost-anything-with-git/
+
+ - rebase
+ - undo commit
+ - reset to specific commit
+ - squash commits
+-->
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+</BODY>
+</HTML>

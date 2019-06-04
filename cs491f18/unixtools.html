@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<Title>COMP491 - Unix Tools Challenges</Title>
+
+</HEAD>
+
+<BODY BGColor='#FFFFFF' text='#000000' link='#473C8B' vlink='#757575'>
+
+<hr>
+<center>
+<font size=+2 color='#006400'>
+<b>
+Computer Science 491<br>
+Senior Seminar<br>
+</b>
+</font>
+<font size=-1>
+<br>
+Dickinson College<br>
+Fall Semester 2018<br>
+Grant Braught
+</font>
+</center>
+
+<hr>
+
+<center>
+<font size=+2 color='#000064'>
+
+<b>Unix Tools Challenges</b>
+
+</font>
+</center>
+
+
+<font size=+1 color='#006400'>
+<b>Introduction</b>
+</font>
+
+<p>In the tutorials below you will learn/review many of the basics of the unix command line, file paths and some basic unix utilities.  This activity then poses some challenges for you to try to solve using the unix command line and utilities.
+
+<p><font size=+1 color='#006400'>
+<b>Prerequisites</b>
+</font>
+
+<p>Before starting the challenges complete Tutorial Sections 1-12 on the site below. 
+<UL>
+  <LI><a href="https://ryanstutorials.net/linuxtutorial/">Ryan's Tutorials - Linux Tutorial</a>
+</UL>
+
+<p>
+<font size=+1 color='#006400'>
+<b>Challenges</b>
+</font>
+
+<script>
+function toggle(soln) {
+    var x = document.getElementById(soln);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+<p>Complete each of the following challenges and append the commands that you use to the Live-log used for the Linux Tutorials homework. These are best completed using your Ubuntu install in VirtualBox.  You can click the "Solution" button below each question to check your solution.  Note that there are multiple possible ways to accomplish each of these challenges.  If yours is different, try running mine and see if it gives the same results as yours.
+
+<OL>
+  <LI>Give a command line using the ps command that display all processes that are running on the system (should be more than a hundred).
+
+<UL><button onclick="toggle('psaux')">Solution</button></UL>
+<div id="psaux">
+<UL><code>ps -aux</code></UL>
+</div>
+
+  <LI>Give a command line using the ps, tail and wc commands, with pipes to display just the number of processes that are running in the current terminal session (use ps alone to check your results).
+<UL><button onclick="toggle('pstailwc')">Solution</button></UL>
+<div id="pstailwc">
+<UL><code>ps | tail -n +2 | wc -l</code></UL>
+</div>
+
+  <LI>Give a command line using grep with your solution to the previous challenges to display the number of processes that are running whose programs live in the /usr/bin directory.
+<UL><button onclick="toggle('psusrbingrep')">Solution</button></UL>
+<div id="psusrbingrep">
+<UL><code>ps -aux | tail -n +2 | grep "/usr/bin" | wc -l</code></UL>
+</div>
+
+  <LI>Open a new terminal window and run the xeyes command.  Give a command line that will terminate (i.e. kill) the xeyes process when executed in a separate terminal window.
+<UL><button onclick="toggle('kill')">Solution</button></UL>
+<div id="kill">
+<UL>
+<code>ps -aux | grep "xeyes"</code>  (to find the process id (PID) for xeyes)<br>
+<code>kill -KILL &lt;PID&gt;</code>
+</UL>
+</div>
+
+  <LI>Learn about the find command using its man page.
+
+  <LI>Give a command line using find that displays the location of all files named passwd that reside within a depth of 5 sub-directories of the machine's root directory. 
+<UL><button onclick="toggle('findpasswd')">Solution</button></UL>
+<div id="findpasswd">
+<UL><code>find . -maxdepth 5 -name "passwd" -print</code></UL>
+</div>
+
+  <LI>In the last challenge, there are many permission denied error messages written to standard error (similar to standard output and appears on the console). Give a command line that redirects standard error to the file '/dev/null' so that these error messages are discarded and the results can be seen more easily. Note: /dev/null is a pseudo file on unix systems that simply discards all data written into it.
+<UL><button onclick="toggle('findpasswdnoerr')">Solution</button></UL>
+<div id="findpasswdnoerr">
+<UL><code>find . -maxdepth 5 -name "passwd" -print 2> /dev/null</code></UL>
+</div>
+
+  <LI>Consider the passwd file in the /etc directory from the previous exercise. This file contains one line for each valid user in the system (use cat to look at it).  Each line has a number of fields delimited by ':' characters.  The next to the last field gives the path to the user's home directory (e.g. /home/braught).  Give a command line that will write the path to the home directory for the "root" user into a file named "userhome.txt" in the /var/tmp directory. Hint: man cut. Note: /var/tmp is a directory on unix machines that all users can write to and is usually used for temporary files.
+<UL><button onclick="toggle('roothome')">Solution</button></UL>
+<div id="roothome">
+<UL><code>grep -a "root" /etc/passwd | cut -f6 -d':' > /var/tmp/userhome.txt</code></UL>
+</div>
+
+  <LI>Give a command line that will append the home directory of your user to the "userhome.txt" file.
+<UL><button onclick="toggle('myhome')">Solution</button></UL>
+<div id="myhome">
+<UL><code>grep -a "myuser" /etc/passwd | cut -f6 -d':' >> /var/tmp/userhome.txt</code></UL>
+</div>
+
+  <LI>If there is more time remaining, try some of the following Hacker Rank challenges (you may need to learn about some additional unix commands as you go):
+  <OL>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-in-linux---the-middle-of-a-text-file">The Middle of a Text File</a>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-tr-1">tr Command #1</a>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-sort-7">sort Command #7</a>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-in-linux-the-uniq-command-3">uniq Command #3</a>
+    <LI><a href="https://www.hackerrank.com/challenges/paste-2">paste Command #2</a>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-in-linux-the-grep-command-5">grep Command #5</a>
+    <LI><a href="https://www.hackerrank.com/challenges/text-processing-in-linux-the-sed-command-3">sed Command #3</a>
+    <LI><a href="https://www.hackerrank.com/challenges/awk-1">awk Command #1</a>
+    <LI><a href="https://www.hackerrank.com/challenges/awk-2">awk Command #2</a>
+  </OL>
+</OL>
+
+<hr>
+<font size=-2>
+<script language="JavaScript">
+          <!---//hide script from old browsers
+          document.write( "This document was last updated "+ document.lastModified + "<br><br>" );
+          //end hiding contents --->
+          </script>
+</font>
+
+<script>
+toggle('psaux') 
+toggle('pstailwc')
+toggle('psusrbingrep')
+toggle('kill')
+toggle('findpasswd')
+toggle('findpasswdnoerr')
+toggle('roothome')
+toggle('myhome')
+</script>
+
+</BODY>
+</HTML>
