@@ -20,7 +20,7 @@ At the time these materials were developed and refined our curriculum contained 
 
 ## Materials:
 
-The [full website for the Senior Seminar (COMP 491/492)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/braughtg/DickinsonHFOSS-SFC-Materials/blob/master/cs491f18/cs491f18.html) is included in the [cs491f18](./cs491f18) folder in this repository. The items below link to the course elements that focus specifically on the H/FOSS aspects of the course. Materials that were used in discussions of software engineering and (non-HFOSS) social/legal/ethical issues are not included here but do appear on the full site linked above. The materials below are organized by topic and can be assembled into a full H/FOSS capstone course.
+The [full website for the Senior Seminar (COMP 491/492)](./cs491f18/cs491f18.html) is included in the [cs491f18](./cs491f18) folder in this repository. The items below link to the course elements that focus specifically on the H/FOSS aspects of the course. Materials that were used in discussions of software engineering and (non-HFOSS) social/legal/ethical issues are not included here but do appear on the full site linked above. The materials below are organized by topic and can be assembled into a full H/FOSS capstone course.
 
 #### Technical Skills Development
 This set of activities, tutorials and homework exercises introduce students to many general tools and skills that are necessary for participation in FOSS projects.  They are completed as a combination of homework and in-class hands-on activities.
