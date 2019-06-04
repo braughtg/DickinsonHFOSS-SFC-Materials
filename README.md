@@ -25,7 +25,7 @@ The [full website for the Senior Seminar (COMP 491/492)](https://htmlpreview.git
 #### Technical Skills Development
 This set of activities, tutorials and homework exercises introduce students to many general tools and skills that are necessary for participation in FOSS projects.  They are completed as a combination of homework and in-class hands-on activities.
 
-* [Blog/Slack/Wiki/GitHub](./cs491f18/blogslackwiki.html)
+* [Blog/Slack/Wiki/GitHub](https://htmlpreview.github.io/?https://raw.githubusercontent.com/braughtg/DickinsonHFOSS-SFC-Materials/master/cs491f18/blogslackwiki.html)
 * [Ubuntu Install](./cs491f18/ubuntuinstall.html)
 * [Unix Tools Challenges](./cs491f18/unixtools.html)
 * [Software Installation](./cs491f18/swinstall.html)
