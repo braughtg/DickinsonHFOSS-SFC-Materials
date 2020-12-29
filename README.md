@@ -1,4 +1,4 @@
-# Dickinson H/FOSS Capstone
+# Dickinson H/FOSS - Capstone
 
 ## Introduction:
 
